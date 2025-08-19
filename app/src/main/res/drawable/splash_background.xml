@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Background color -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/background_dark" />
+        </shape>
+    </item>
+
+    <!-- App logo centered -->
+    <item android:gravity="center">
+        <shape android:shape="oval">
+            <solid android:color="@color/accent_green" />
+            <size
+                android:width="120dp"
+                android:height="120dp" />
+        </shape>
+    </item>
+
+    <!-- App icon/logo overlay -->
+    <item android:gravity="center">
+        <shape android:shape="oval">
+            <solid android:color="@color/primary_dark" />
+            <size
+                android:width="80dp"
+                android:height="80dp" />
+        </shape>
+    </item>
+
+    <!-- Sleep icon in center -->
+    <item android:gravity="center">
+        <vector
+            android:width="40dp"
+            android:height="40dp"
+            android:viewportWidth="24"
+            android:viewportHeight="24">
+            <path
+                android:fillColor="@color/white"
+                android:pathData="M12,3c-4.97,0 -9,4.03 -9,9s4.03,9 9,9s9,-4.03 9,-9S16.97,3 12,3zM15.5,14c0,0.83 -0.67,1.5 -1.5,1.5s-1.5,-0.67 -1.5,-1.5s0.67,-1.5 1.5,-1.5S15.5,13.17 15.5,14zM10.5,10C10.5,9.17 9.83,8.5 9,8.5S7.5,9.17 7.5,10s0.67,1.5 1.5,1.5S10.5,10.83 10.5,10z"/>
+        </vector>
+    </item>
+
+    <!-- App name at bottom -->
+    <item
+        android:gravity="bottom|center_horizontal"
+        android:bottom="120dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/transparent" />
+            <size
+                android:width="200dp"
+                android:height="40dp" />
+        </shape>
+    </item>
+
+</layer-list>

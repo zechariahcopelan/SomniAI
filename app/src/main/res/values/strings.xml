@@ -1,0 +1,834 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SomniAI</string>
+
+    <!-- Main Activity -->
+    <string name="start_sleep_tracking">Start Sleep Tracking</string>
+    <string name="stop_sleep_tracking">Stop Sleep Tracking</string>
+    <string name="sleep_status">Sleep Status</string>
+    <string name="ready_to_track">Ready to track your sleep</string>
+    <string name="tracking_in_progress">Tracking your sleep...</string>
+    <string name="last_sleep_info">Last sleep: %1$s</string>
+
+    <!-- Enhanced Main Activity UI -->
+    <string name="sleep_tracking_title">Sleep Tracking</string>
+    <string name="ready_to_monitor">Ready to monitor your sleep</string>
+    <string name="tap_to_start">Tap the button below to start tracking your sleep patterns</string>
+    <string name="last_session_info">Last session: %1$s • Quality: %2$.1f/10</string>
+    <string name="time_ago_format">%1$s ago</string>
+    <string name="active_session">Active Session</string>
+    <string name="in_phase_for">In phase for %1$s</string>
+    <string name="confidence_label">confidence</string>
+    <string name="sleep_efficiency_label">Sleep Efficiency</string>
+    <string name="real_time_metrics">Real-time Metrics</string>
+    <string name="sleep_statistics">Sleep Statistics</string>
+    <string name="total_sessions_format">%1$d sessions</string>
+    <string name="quick_actions">Quick Actions</string>
+
+    <!-- ========== MISSING UI BUTTON STRINGS ========== -->
+    <!-- Analytics Toggle -->
+    <string name="analytics_toggle">Toggle Analytics</string>
+    <string name="show_analytics">Show Analytics</string>
+    <string name="hide_analytics">Hide Analytics</string>
+    <string name="analytics_expanded">Analytics Expanded</string>
+    <string name="analytics_collapsed">Analytics Collapsed</string>
+
+
+    <!-- Priority related strings -->
+    <string name="priority_high">High Priority</string>
+    <string name="priority_medium">Medium Priority</string>
+    <string name="priority_low">Low Priority</string>
+    <string name="priority_urgent">Urgent</string>
+
+
+    <!-- Refresh Button -->
+    <string name="refresh">Refresh</string>
+    <string name="refresh_data">Refresh Data</string>
+    <string name="refreshing">Refreshing...</string>
+    <string name="pull_to_refresh">Pull to refresh</string>
+
+    <!-- Quality Trend Mini Chart -->
+    <string name="quality_trend">Quality Trend</string>
+    <string name="mini_chart">Mini Chart</string>
+    <string name="trend_preview">Trend Preview</string>
+
+    <!-- ========== MISSING INSIGHTS UI STRINGS ========== -->
+    <!-- Insights Count -->
+    <string name="insights_count">%1$d insights</string>
+    <string name="insights_available">%1$d insights available</string>
+    <string name="no_insights">No insights yet</string>
+    <string name="new_insights">New insights</string>
+
+    <!-- Insights Indicator -->
+    <string name="insights_indicator">Insights Status</string>
+    <string name="insights_ready">Insights Ready</string>
+    <string name="insights_processing">Processing Insights</string>
+
+    <!-- Latest Insight -->
+    <string name="latest_insight">Latest Insight</string>
+    <string name="most_recent_insight">Most Recent Insight</string>
+    <string name="insight_preview">Insight Preview</string>
+
+    <!-- ========== MISSING INSIGHT CARDS STRINGS ========== -->
+    <!-- Primary Insight Card -->
+    <string name="primary_insight">Primary Insight</string>
+    <string name="main_insight">Main Insight</string>
+    <string name="key_finding">Key Finding</string>
+    <string name="primary_insight_title">Primary Sleep Insight</string>
+    <string name="primary_insight_description">Your most important sleep insight</string>
+    <string name="primary_insight_confidence">Primary Confidence</string>
+
+    <!-- Pattern Insight Card -->
+    <string name="pattern_insight">Pattern Insight</string>
+    <string name="sleep_pattern_detected">Sleep Pattern Detected</string>
+    <string name="pattern_analysis_result">Pattern Analysis</string>
+    <string name="pattern_insight_title">Pattern Detection</string>
+    <string name="pattern_insight_text">Pattern analysis results</string>
+
+    <!-- Recommendation Insight Card -->
+    <string name="recommendation_insight">Recommendation</string>
+    <string name="sleep_recommendation">Sleep Recommendation</string>
+    <string name="actionable_recommendation">Actionable Recommendation</string>
+    <string name="recommendation_insight_title">Smart Recommendation</string>
+    <string name="recommendation_insight_text">Personalized recommendation</string>
+
+    <!-- Weekly Trend Card -->
+    <string name="weekly_trend">Weekly Trend</string>
+    <string name="weekly_summary_card">Weekly Summary</string>
+    <string name="trend_card">Trend Analysis</string>
+    <string name="weekly_trend_description">Your sleep trend this week</string>
+    <string name="trend_percentage">%1$+.1f%%</string>
+    <string name="trend_icon">Trend Direction</string>
+
+    <!-- ========== MISSING ANALYTICS LAYOUT STRINGS ========== -->
+    <!-- Analytics Layouts -->
+    <string name="analytics_layout">Analytics View</string>
+    <string name="analytics_overview">Analytics Overview</string>
+    <string name="analytics_detailed">Detailed Analytics</string>
+    <string name="analytics_trends">Analytics Trends</string>
+    <string name="analytics_comparison">Analytics Comparison</string>
+    <string name="analytics_content">Analytics Content</string>
+    <string name="analytics_expanded_layout">Expanded Analytics</string>
+
+    <!-- Live Tracking Layouts -->
+    <string name="live_tracking_layout">Live Tracking</string>
+    <string name="live_sensor_data">Live Sensor Data</string>
+    <string name="sensor_indicators">Sensor Indicators</string>
+    <string name="real_time_charts">Real-time Charts</string>
+
+    <!-- ========== MISSING TREND INDICATORS STRINGS ========== -->
+    <!-- Trend Direction Icons -->
+    <string name="trend_direction">Trend Direction</string>
+    <string name="trend_up">Trending Up</string>
+    <string name="trend_down">Trending Down</string>
+    <string name="trend_stable_icon">Stable Trend</string>
+
+    <!-- Trend Icon Text -->
+    <string name="trend_icon_text">📈</string>
+    <string name="trend_up_icon">↗</string>
+    <string name="trend_down_icon">↘</string>
+    <string name="trend_stable_arrow">→</string>
+
+    <!-- ========== MISSING SENSOR STATUS STRINGS ========== -->
+    <!-- Sensor Health -->
+    <string name="sensor_health_indicator">Sensor Health</string>
+    <string name="motion_sensor_indicator">Motion Sensor</string>
+    <string name="audio_sensor_indicator">Audio Sensor</string>
+    <string name="sensor_status_text">Sensor Status</string>
+
+    <!-- Sensor Update Time -->
+    <string name="insights_update_time">Last updated: %1$s</string>
+    <string name="last_update">Last Update</string>
+    <string name="updated_now">Updated now</string>
+
+    <!-- ========== MISSING PROGRESS INDICATORS STRINGS ========== -->
+    <!-- Progress Bars -->
+    <string name="session_progress_bar">Session Progress</string>
+    <string name="session_progress_text">%1$d%% complete</string>
+    <string name="movement_progress_bar">Movement Progress</string>
+    <string name="noise_progress_bar">Noise Progress</string>
+    <string name="quality_progress_bar">Quality Progress</string>
+    <string name="efficiency_progress_bar">Efficiency Progress</string>
+    <string name="phase_confidence_progress_bar">Phase Confidence</string>
+    <string name="restlessness_progress_bar">Restlessness Level</string>
+
+    <!-- ========== MISSING DETAILED ANALYTICS STRINGS ========== -->
+    <!-- Quality Report -->
+    <string name="quality_report_layout">Quality Report</string>
+    <string name="quality_grade_text">Quality Grade</string>
+    <string name="quality_score_detail_text">Quality Score Details</string>
+    <string name="strongest_factor_text">Strongest Factor</string>
+    <string name="weakest_factor_text">Weakest Factor</string>
+
+    <!-- Quality Insights -->
+    <string name="quality_insights_layout">Quality Insights</string>
+    <string name="quality_insights_count_text">%1$d quality insights</string>
+    <string name="top_quality_insight_text">Top Quality Insight</string>
+    <string name="top_quality_insight_description_text">Quality insight description</string>
+
+    <!-- Comparison -->
+    <string name="comparison_layout">Comparison Analysis</string>
+    <string name="performance_rating_text">Performance Rating</string>
+    <string name="comparison_insight_text">Comparison Insights</string>
+
+    <!-- Data Integrity -->
+    <string name="data_integrity_indicator">Data Integrity</string>
+    <string name="data_integrity_text">Data Quality</string>
+    <string name="data_success_rate_text">Success Rate: %1$.1f%%</string>
+
+    <!-- Performance -->
+    <string name="performance_layout">Performance Metrics</string>
+    <string name="memory_usage_text">Memory: %1$.1f MB</string>
+    <string name="data_queue_size_text">Queue: %1$d items</string>
+    <string name="avg_save_time_text">Avg Save: %1$dms</string>
+    <string name="performance_indicator">Performance Status</string>
+
+    <!-- ========== MISSING LOADING INDICATORS STRINGS ========== -->
+    <!-- Loading States -->
+    <string name="loading_indicator">Loading</string>
+    <string name="statistics_loading_indicator">Loading Statistics</string>
+    <string name="sessions_loading_indicator">Loading Sessions</string>
+    <string name="analytics_loading_indicator">Loading Analytics</string>
+
+    <!-- Main Content -->
+    <string name="main_content_layout">Main Content</string>
+    <string name="last_sleep_info_layout">Last Sleep Information</string>
+
+    <!-- ========== MISSING LIVE TRACKING STRINGS ========== -->
+    <!-- Current Phase -->
+    <string name="current_phase_text">Current Phase</string>
+    <string name="phase_transition_text">Phase Transition</string>
+
+    <!-- Data Save Status -->
+    <string name="data_save_indicator">Data Save Status</string>
+    <string name="data_save_status_text">Saving data...</string>
+    <string name="data_saved">Data Saved</string>
+    <string name="data_save_failed">Save Failed</string>
+
+    <!-- Live Metrics -->
+    <string name="live_efficiency_text">Live Efficiency</string>
+    <string name="movement_intensity_text">Movement Intensity</string>
+    <string name="movement_count_text">Movement Events</string>
+    <string name="movement_intensity_value">Movement Value</string>
+    <string name="noise_level_text">Noise Level</string>
+    <string name="noise_count_text">Noise Events</string>
+    <string name="noise_level_value">Noise Value</string>
+    <string name="environmental_score_text">Environmental Score</string>
+    <string name="environmental_grade_text">Environmental Grade</string>
+    <string name="restlessness_level_text">Restlessness Level</string>
+    <string name="live_quality_estimate_text">Live Quality Estimate</string>
+
+    <!-- ========== MISSING TRENDS LAYOUT STRINGS ========== -->
+    <!-- Trends -->
+    <string name="trends_layout">Trends Analysis</string>
+    <string name="trends_summary_text">Trends Summary</string>
+    <string name="trend_indicator_text">Trend Indicator</string>
+    <string name="recommendations_count_text">%1$d recommendations</string>
+    <string name="latest_recommendation_text">Latest Recommendation</string>
+    <string name="recommendation_priority_indicator">Priority Level</string>
+
+    <!-- Analytics Session Count -->
+    <string name="analytics_session_count_text">%1$d sessions analyzed</string>
+    <string name="analytics_quality_text">Overall Quality: %1$.1f</string>
+    <string name="analytics_efficiency_text">Avg Efficiency: %1$.1f%%</string>
+
+    <!-- ========== MISSING INITIALIZATION STRINGS ========== -->
+    <!-- Initialization -->
+    <string name="initialization_success_indicator">Initialization Success</string>
+    <string name="app_initialized">App Initialized</string>
+    <string name="ready_to_begin">Ready to Begin</string>
+
+    <!-- Enhanced Tracking Controls -->
+    <string name="pause_tracking">Pause</string>
+    <string name="emergency_stop">Emergency Stop</string>
+    <string name="resume_tracking">Resume</string>
+    <string name="pause_tracking_button">Pause Tracking</string>
+    <string name="emergency_stop_button">Emergency Stop</string>
+
+    <!-- Menu Items -->
+    <string name="menu_insights">Insights</string>
+    <string name="menu_export">Export Data</string>
+    <string name="menu_help">Help</string>
+    <string name="menu_about">About</string>
+    <string name="action_export_all">Export All</string>
+    <string name="action_clear_all">Clear All</string>
+    <string name="action_sort">Sort</string>
+
+    <!-- Quick Stats -->
+    <string name="avg_sleep">Avg Sleep</string>
+    <string name="quality_score">Quality Score</string>
+    <string name="sleep_efficiency">Sleep Efficiency</string>
+    <string name="sleep_duration_format">%1$dh %2$dm</string>
+    <string name="quality_score_format">%.1f/10</string>
+    <string name="efficiency_format">%.1f%%</string>
+
+    <!-- Navigation -->
+    <string name="history">History</string>
+    <string name="charts">Charts</string>
+    <string name="settings">Settings</string>
+
+    <!-- Live Tracking -->
+    <string name="current_phase">Current Phase</string>
+    <string name="phase_confidence">Confidence</string>
+    <string name="session_duration">Session Duration</string>
+    <string name="session_progress">Session Progress</string>
+    <string name="movement_intensity">Movement</string>
+    <string name="noise_level">Noise Level</string>
+    <string name="sensor_status">Sensor Status</string>
+    <string name="motion_sensor">Motion</string>
+    <string name="audio_sensor">Audio</string>
+
+    <!-- Enhanced Live Metrics -->
+    <string name="movement_label">Movement</string>
+    <string name="noise_label">Noise</string>
+    <string name="restlessness_label">Restlessness</string>
+    <string name="heart_rate_label">Heart Rate</string>
+    <string name="coming_soon">Coming Soon</string>
+    <string name="requires_sensor">Requires sensor</string>
+    <string name="restlessness_score_format">%.1f/10</string>
+
+    <!-- Sleep Phases -->
+    <string name="sleep_phase_awake">Awake</string>
+    <string name="sleep_phase_light">Light Sleep</string>
+    <string name="sleep_phase_deep">Deep Sleep</string>
+    <string name="sleep_phase_rem">REM Sleep</string>
+    <string name="sleep_phase_unknown">Unknown</string>
+
+    <!-- Movement Levels -->
+    <string name="movement_very_low">Very Low</string>
+    <string name="movement_low">Low</string>
+    <string name="movement_medium">Medium</string>
+    <string name="movement_high">High</string>
+    <string name="movement_very_high">Very High</string>
+
+    <!-- Noise Levels -->
+    <string name="noise_very_quiet">Very Quiet</string>
+    <string name="noise_quiet">Quiet</string>
+    <string name="noise_moderate">Moderate</string>
+    <string name="noise_loud">Loud</string>
+    <string name="noise_very_loud">Very Loud</string>
+
+    <!-- Restlessness Levels -->
+    <string name="restlessness_very_calm">Very Calm</string>
+    <string name="restlessness_calm">Calm</string>
+    <string name="restlessness_moderate">Moderate</string>
+    <string name="restlessness_restless">Restless</string>
+    <string name="restlessness_very_restless">Very Restless</string>
+
+    <!-- Enhanced Sensor Status -->
+    <string name="sensor_status_active">Sensors Active</string>
+    <string name="sensor_status_initializing">Initializing Sensors</string>
+    <string name="sensor_status_motion_inactive">Motion Sensor Inactive</string>
+    <string name="sensor_status_audio_inactive">Audio Sensor Inactive</string>
+    <string name="sensor_status_all_inactive">All Sensors Inactive</string>
+    <string name="sensor_events_format">%1$d events</string>
+    <string name="confidence_format">%1$d%%</string>
+    <string name="sensors_healthy">All sensors healthy</string>
+    <string name="sensor_connectivity_issue">Sensor connectivity issue: %1$s</string>
+
+    <!-- Phase Transitions -->
+    <string name="phase_transition_format">From %1$s to %2$s</string>
+    <string name="phase_duration_minutes">%1$d minutes</string>
+    <string name="phase_confidence_high">High</string>
+    <string name="phase_confidence_medium">Medium</string>
+    <string name="phase_confidence_low">Low</string>
+    <string name="phase_confidence_very_low">Very Low</string>
+
+    <!-- Session Duration Formats -->
+    <string name="session_duration_long_format">%1$02d:%2$02d:%3$02d</string>
+    <string name="session_duration_short_format">%1$02d:%2$02d</string>
+    <string name="session_duration_hours_format">%1$dh %2$dm</string>
+
+    <!-- Real-time Feedback -->
+    <string name="tracking_started">Sleep tracking started successfully!</string>
+    <string name="tracking_stopped">Sleep tracking stopped</string>
+    <string name="tracking_paused">Sleep tracking paused</string>
+    <string name="tracking_resumed">Sleep tracking resumed</string>
+    <string name="sensors_initialized">Sensors initialized successfully</string>
+    <string name="phase_transition">Sleep phase: %1$s</string>
+    <string name="restlessness_info">Restlessness: %1$s</string>
+    <string name="tracking_active_duration">Tracking active: %1$s</string>
+    <string name="session_complete_summary">Sleep session complete!\nDuration: %1$s\nQuality: %2$.1f/10\nEfficiency: %3$.1f%%</string>
+
+    <!-- Enhanced Status Messages -->
+    <string name="session_in_progress">Session in progress</string>
+    <string name="monitoring_sleep_patterns">Monitoring your sleep patterns</string>
+    <string name="session_paused">Session paused</string>
+    <string name="preparing_to_track">Preparing to track your sleep</string>
+    <string name="sensors_ready">All sensors ready</string>
+    <string name="tracking_ready">Ready to begin tracking</string>
+
+    <!-- Data Loading States -->
+    <string name="loading_statistics">Loading sleep statistics…</string>
+    <string name="loading_sessions">Loading recent sessions…</string>
+    <string name="loading_analytics">Loading analytics…</string>
+    <string name="loading_data">Loading data…</string>
+    <string name="refreshing_data">Refreshing data…</string>
+    <string name="data_loaded">Data loaded successfully</string>
+    <string name="no_sessions_yet">No sleep sessions yet</string>
+    <string name="start_first_session">Start your first sleep tracking session</string>
+
+    <!-- Permissions -->
+    <string name="permission_microphone_rationale">Microphone permission is needed to detect ambient noise levels during sleep. We don\'t record audio, only measure volume levels.</string>
+    <string name="permission_denied">Permission denied. Some features may not work properly.</string>
+    <string name="permission_required">Microphone Permission Required</string>
+    <string name="permissions_granted">Permissions granted! Ready to track sleep.</string>
+
+    <!-- Notifications -->
+    <string name="sleep_tracking_notification_title">Sleep Tracking Active</string>
+    <string name="sleep_tracking_notification_text">Monitoring your sleep patterns</string>
+    <string name="notification_channel_name">Sleep Tracking</string>
+    <string name="notification_channel_description">Notifications for active sleep tracking sessions</string>
+
+    <!-- Error Messages -->
+    <string name="error_sensor_not_available">Accelerometer sensor not available on this device</string>
+    <string name="error_microphone_not_available">Microphone not available</string>
+    <string name="error_starting_service">Failed to start sleep tracking service</string>
+    <string name="error_starting_tracking">Failed to start tracking: %1$s</string>
+    <string name="error_stopping_tracking">Failed to stop tracking: %1$s</string>
+    <string name="error_initializing_tracking">Failed to initialize tracking: %1$s</string>
+    <string name="error_processing_session">Error processing session: %1$s</string>
+    <string name="error_sensor_permission">Permission denied. Please grant microphone access.</string>
+    <string name="error_sensors_offline">Sensors offline - Checking...</string>
+    <string name="error_motion_sensor_issue">Motion sensor issue</string>
+    <string name="error_audio_sensor_issue">Audio sensor issue</string>
+    <string name="error_loading_data">Failed to load data</string>
+    <string name="error_no_data">No data available</string>
+    <string name="error_database">Database error occurred</string>
+
+    <!-- Success Messages -->
+    <string name="success_tracking_started">Sleep tracking started successfully!</string>
+    <string name="success_tracking_stopped">Sleep tracking stopped successfully</string>
+    <string name="success_sensors_ready">Sensors ready for tracking</string>
+    <string name="success_permissions_granted">Permissions granted! Ready to track sleep.</string>
+    <string name="success_data_loaded">Data loaded successfully</string>
+    <string name="success_session_saved">Session saved successfully</string>
+
+    <!-- Settings -->
+    <string name="sensitivity_settings">Sensitivity Settings</string>
+    <string name="movement_sensitivity">Movement Sensitivity</string>
+    <string name="audio_sensitivity">Audio Sensitivity</string>
+    <string name="data_settings">Data Settings</string>
+    <string name="clear_all_data">Clear All Data</string>
+    <string name="export_data">Export Data</string>
+    <string name="movement_threshold">Movement Threshold</string>
+    <string name="noise_threshold">Noise Threshold</string>
+    <string name="enable_movement_detection">Enable Movement Detection</string>
+    <string name="enable_noise_detection">Enable Noise Detection</string>
+    <string name="enable_smart_filtering">Enable Smart Filtering</string>
+
+    <!-- Charts -->
+    <string name="sleep_duration_chart">Sleep Duration</string>
+    <string name="movement_chart">Movement Intensity</string>
+    <string name="quality_trend_chart">Quality Trend</string>
+    <string name="weekly_summary">Weekly Summary</string>
+    <string name="no_data_available">No data available</string>
+    <string name="loading_chart_data">Loading chart data...</string>
+
+    <!-- Session Information -->
+    <string name="session_duration_placeholder">--:--</string>
+    <string name="phase_confidence_placeholder">--%</string>
+    <string name="efficiency_placeholder">--%</string>
+    <string name="movement_count_placeholder">-- events</string>
+    <string name="noise_count_placeholder">-- events</string>
+
+    <!-- Quality Grades -->
+    <string name="quality_excellent">Excellent</string>
+    <string name="quality_very_good">Very Good</string>
+    <string name="quality_good">Good</string>
+    <string name="quality_fair">Fair</string>
+    <string name="quality_poor">Poor</string>
+    <string name="quality_very_poor">Very Poor</string>
+
+    <!-- Efficiency Grades -->
+    <string name="efficiency_excellent">Excellent</string>
+    <string name="efficiency_very_good">Very Good</string>
+    <string name="efficiency_good">Good</string>
+    <string name="efficiency_fair">Fair</string>
+    <string name="efficiency_poor">Poor</string>
+
+    <!-- Trend Indicators -->
+    <string name="trend_improving">Improving</string>
+    <string name="trend_stable">Stable</string>
+    <string name="trend_declining">Declining</string>
+    <string name="trend_insufficient_data">Insufficient Data</string>
+
+    <!-- Debug and Development -->
+    <string name="debug_sensor_test">Test Sensors</string>
+    <string name="debug_current_state">Current State</string>
+    <string name="debug_tracking_info">Tracking: %1$s, Permissions: %2$s</string>
+
+    <!-- Accessibility -->
+    <string name="accessibility_tracking_button">Start or stop sleep tracking</string>
+    <string name="accessibility_motion_sensor_indicator">Motion sensor status indicator</string>
+    <string name="accessibility_audio_sensor_indicator">Audio sensor status indicator</string>
+    <string name="accessibility_session_progress">Sleep session progress bar</string>
+    <string name="accessibility_navigation_button">Navigate to %1$s</string>
+
+    <!-- Enhanced Accessibility -->
+    <string name="accessibility_status_card">Sleep tracking status card</string>
+    <string name="accessibility_metrics_card">Real-time sleep metrics</string>
+    <string name="accessibility_phase_indicator">Current sleep phase indicator</string>
+    <string name="accessibility_efficiency_bar">Sleep efficiency progress bar</string>
+    <string name="accessibility_pause_button">Pause sleep tracking</string>
+    <string name="accessibility_emergency_stop">Emergency stop tracking</string>
+
+    <!-- Time Formats -->
+    <string name="time_format_hours_minutes">%1$dh %2$dm</string>
+    <string name="time_format_minutes_seconds">%1$dm %2$ds</string>
+    <string name="time_format_hours_only">%1$dh</string>
+    <string name="time_format_minutes_only">%1$dm</string>
+
+    <!-- Enhanced Time Formats -->
+    <string name="time_ago_just_now">Just now</string>
+    <string name="time_ago_minutes">%1$d minutes ago</string>
+    <string name="time_ago_hours">%1$d hours ago</string>
+    <string name="time_ago_days">%1$d days ago</string>
+    <string name="time_ago_weeks">%1$d weeks ago</string>
+
+    <!-- Action Confirmations -->
+    <string name="confirm_stop_tracking">Are you sure you want to stop tracking?</string>
+    <string name="confirm_emergency_stop">Emergency stop will end the current session. Continue?</string>
+    <string name="confirm_pause_tracking">Pause the current tracking session?</string>
+    <string name="confirm">Confirm</string>
+    <string name="cancel">Cancel</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="ok">OK</string>
+
+    <!-- App State Messages -->
+    <string name="app_ready">SomniAI is ready</string>
+    <string name="preparing_app">Preparing SomniAI…</string>
+    <string name="initializing_sensors">Initializing sensors…</string>
+    <string name="calibrating_sensors">Calibrating sensors…</string>
+    <string name="sensors_calibrated">Sensors calibrated and ready</string>
+
+    <!-- AI Insights & Analysis -->
+    <string name="ai_insights">AI Insights</string>
+    <string name="ai_analysis">AI Analysis</string>
+    <string name="personalized_insights">Personalized Insights</string>
+    <string name="smart_recommendations">Smart Recommendations</string>
+    <string name="sleep_intelligence">Sleep Intelligence</string>
+    <string name="ai_powered_analysis">AI-Powered Analysis</string>
+    <string name="machine_learning_insights">Machine Learning Insights</string>
+    <string name="intelligent_tracking">Intelligent Tracking</string>
+    <string name="adaptive_learning">Adaptive Learning</string>
+    <string name="pattern_recognition">Pattern Recognition</string>
+
+    <!-- AI Processing States -->
+    <string name="ai_analyzing">AI analyzing your sleep data…</string>
+    <string name="generating_insights">Generating personalized insights…</string>
+    <string name="processing_patterns">Processing sleep patterns…</string>
+    <string name="ai_learning">AI learning from your data…</string>
+    <string name="analyzing_trends">Analyzing trends and patterns…</string>
+    <string name="computing_recommendations">Computing recommendations…</string>
+    <string name="optimizing_insights">Optimizing insights for you…</string>
+    <string name="ai_processing_complete">AI analysis complete</string>
+    <string name="ai_model_loading">Loading AI model…</string>
+    <string name="ai_model_ready">AI model ready</string>
+    <string name="ai_calibrating">AI calibrating to your patterns…</string>
+
+    <!-- AI Model Selection -->
+    <string name="ai_model">AI Model</string>
+    <string name="ai_model_gpt4">GPT-4 (Premium)</string>
+    <string name="ai_model_claude">Claude 3 Sonnet</string>
+    <string name="ai_model_gemini">Gemini Pro</string>
+    <string name="ai_model_gpt35">GPT-3.5 (Fast)</string>
+    <string name="ai_model_local">Local Model</string>
+    <string name="ai_model_auto">Auto Select</string>
+    <string name="ai_model_performance">Model Performance</string>
+    <string name="ai_model_accuracy">Accuracy: %1$.1f%%</string>
+    <string name="ai_model_speed">Speed: %1$s</string>
+    <string name="ai_model_cost">Cost: %1$s</string>
+    <string name="ai_model_status">Status: %1$s</string>
+
+    <!-- AI Quality & Confidence -->
+    <string name="ai_confidence">AI Confidence</string>
+    <string name="insight_confidence">Insight Confidence</string>
+    <string name="analysis_quality">Analysis Quality</string>
+    <string name="prediction_accuracy">Prediction Accuracy</string>
+    <string name="ai_reliability">AI Reliability</string>
+    <string name="confidence_high">High Confidence</string>
+    <string name="confidence_medium">Medium Confidence</string>
+    <string name="confidence_low">Low Confidence</string>
+    <string name="confidence_format_percent">%1$d%% confidence</string>
+    <string name="quality_excellent_ai">Excellent AI Analysis</string>
+    <string name="quality_good_ai">Good AI Analysis</string>
+    <string name="quality_fair_ai">Fair AI Analysis</string>
+    <string name="quality_poor_ai">Limited AI Analysis</string>
+
+    <!-- Personalization & Learning -->
+    <string name="personalizing_experience">Personalizing your experience…</string>
+    <string name="learning_preferences">Learning your preferences…</string>
+    <string name="adapting_insights">Adapting insights to your patterns…</string>
+    <string name="customizing_recommendations">Customizing recommendations…</string>
+    <string name="ai_personalization">AI Personalization</string>
+    <string name="learning_progress">Learning Progress</string>
+    <string name="personalization_level">Personalization Level</string>
+    <string name="adaptation_score">Adaptation Score</string>
+    <string name="user_profile_accuracy">Profile Accuracy: %1$.1f%%</string>
+    <string name="learning_sessions_format">%1$d learning sessions</string>
+    <string name="personalization_improving">Personalization improving…</string>
+    <string name="ai_knows_you_better">AI knows you better now!</string>
+
+    <!-- Smart Insights Categories -->
+    <string name="insight_duration">Duration Insights</string>
+    <string name="insight_quality">Quality Insights</string>
+    <string name="insight_environment">Environment Insights</string>
+    <string name="insight_movement">Movement Insights</string>
+    <string name="insight_consistency">Consistency Insights</string>
+    <string name="insight_trends">Trend Insights</string>
+    <string name="insight_patterns">Pattern Insights</string>
+    <string name="insight_optimization">Optimization Insights</string>
+    <string name="insight_health">Health Insights</string>
+    <string name="insight_lifestyle">Lifestyle Insights</string>
+
+    <!-- AI Recommendations -->
+    <string name="ai_recommendation">AI Recommendation</string>
+    <string name="smart_suggestion">Smart Suggestion</string>
+    <string name="personalized_tip">Personalized Tip</string>
+    <string name="ai_advice">AI Advice</string>
+    <string name="optimization_suggestion">Optimization Suggestion</string>
+    <string name="improvement_opportunity">Improvement Opportunity</string>
+    <string name="positive_reinforcement">Keep up the good work!</string>
+    <string name="actionable_insight">Actionable Insight</string>
+    <string name="priority_recommendation">Priority Recommendation</string>
+    <string name="quick_win">Quick Win</string>
+    <string name="long_term_goal">Long-term Goal</string>
+
+    <!-- Trend Analysis -->
+    <string name="trend_analysis">Trend Analysis</string>
+    <string name="pattern_detection">Pattern Detection</string>
+    <string name="sleep_trends">Sleep Trends</string>
+    <string name="weekly_trends">Weekly Trends</string>
+    <string name="monthly_trends">Monthly Trends</string>
+    <string name="seasonal_patterns">Seasonal Patterns</string>
+    <string name="behavioral_patterns">Behavioral Patterns</string>
+    <string name="correlation_analysis">Correlation Analysis</string>
+    <string name="predictive_analysis">Predictive Analysis</string>
+    <string name="trend_prediction">Trend Prediction</string>
+    <string name="pattern_strength">Pattern Strength: %1$s</string>
+    <string name="trend_confidence">Trend Confidence: %1$d%%</string>
+
+    <!-- AI Performance Metrics -->
+    <string name="ai_performance">AI Performance</string>
+    <string name="processing_time">Processing Time</string>
+    <string name="response_time">Response Time: %1$dms</string>
+    <string name="token_usage">Token Usage: %1$d/%2$d</string>
+    <string name="api_calls_today">API Calls Today: %1$d</string>
+    <string name="ai_efficiency">AI Efficiency: %1$.1f%%</string>
+    <string name="model_accuracy">Model Accuracy: %1$.1f%%</string>
+    <string name="insight_relevance">Insight Relevance: %1$.1f%%</string>
+    <string name="user_satisfaction">User Satisfaction: %1$.1f/10</string>
+    <string name="ai_uptime">AI Uptime: %1$.1f%%</string>
+
+    <!-- AI Error Messages -->
+    <string name="error_ai_service_unavailable">AI service temporarily unavailable</string>
+    <string name="error_ai_processing_failed">AI processing failed</string>
+    <string name="error_ai_model_loading">Failed to load AI model</string>
+    <string name="error_insight_generation">Failed to generate insights</string>
+    <string name="error_ai_timeout">AI request timed out</string>
+    <string name="error_ai_rate_limit">AI rate limit exceeded</string>
+    <string name="error_ai_insufficient_data">Insufficient data for AI analysis</string>
+    <string name="error_ai_model_error">AI model error: %1$s</string>
+    <string name="error_ai_network">Network error during AI processing</string>
+    <string name="error_ai_authentication">AI service authentication failed</string>
+    <string name="error_ai_quota_exceeded">AI quota exceeded</string>
+
+    <!-- AI Success Messages -->
+    <string name="success_ai_analysis_complete">AI analysis completed successfully</string>
+    <string name="success_insights_generated">New insights generated!</string>
+    <string name="success_ai_model_loaded">AI model loaded successfully</string>
+    <string name="success_personalization_updated">Personalization updated</string>
+    <string name="success_ai_optimized">AI performance optimized</string>
+    <string name="success_pattern_detected">New sleep pattern detected!</string>
+    <string name="success_recommendation_applied">Recommendation applied successfully</string>
+    <string name="success_ai_learning">AI learning from your feedback</string>
+
+    <!-- AI Settings -->
+    <string name="ai_settings">AI Settings</string>
+    <string name="ai_model_selection">AI Model Selection</string>
+    <string name="ai_personalization_settings">AI Personalization</string>
+    <string name="insight_frequency">Insight Frequency</string>
+    <string name="insight_detail_level">Insight Detail Level</string>
+    <string name="ai_processing_priority">Processing Priority</string>
+    <string name="enable_ai_insights">Enable AI Insights</string>
+    <string name="enable_personalization">Enable Personalization</string>
+    <string name="enable_predictive_analysis">Enable Predictive Analysis</string>
+    <string name="enable_smart_recommendations">Enable Smart Recommendations</string>
+    <string name="ai_data_usage">AI Data Usage</string>
+    <string name="ai_privacy_mode">AI Privacy Mode</string>
+    <string name="local_processing_only">Local Processing Only</string>
+    <string name="cloud_ai_enabled">Cloud AI Enabled</string>
+
+    <!-- Insight Scheduling -->
+    <string name="insight_scheduling">Insight Scheduling</string>
+    <string name="smart_timing">Smart Timing</string>
+    <string name="optimal_insight_time">Optimal Insight Time</string>
+    <string name="insight_delivery">Insight Delivery</string>
+    <string name="scheduled_insights">Scheduled Insights</string>
+    <string name="immediate_insights">Immediate Insights</string>
+    <string name="daily_summary_time">Daily Summary Time</string>
+    <string name="weekly_review_time">Weekly Review Time</string>
+    <string name="insight_cooldown">Insight Cooldown</string>
+    <string name="max_daily_insights">Max Daily Insights: %1$d</string>
+    <string name="next_insight_in">Next insight in %1$s</string>
+
+    <!-- AI Context & Memory -->
+    <string name="ai_context">AI Context</string>
+    <string name="conversation_memory">Conversation Memory</string>
+    <string name="context_awareness">Context Awareness</string>
+    <string name="historical_context">Historical Context</string>
+    <string name="session_context">Session Context</string>
+    <string name="user_context">User Context</string>
+    <string name="environmental_context">Environmental Context</string>
+    <string name="temporal_context">Temporal Context</string>
+    <string name="context_relevance">Context Relevance: %1$d%%</string>
+    <string name="memory_retention">Memory Retention: %1$d days</string>
+
+    <!-- Advanced AI Features -->
+    <string name="multi_modal_analysis">Multi-Modal Analysis</string>
+    <string name="ensemble_modeling">Ensemble Modeling</string>
+    <string name="transfer_learning">Transfer Learning</string>
+    <string name="federated_learning">Federated Learning</string>
+    <string name="continual_learning">Continual Learning</string>
+    <string name="meta_learning">Meta Learning</string>
+    <string name="few_shot_learning">Few-Shot Learning</string>
+    <string name="active_learning">Active Learning</string>
+    <string name="reinforcement_learning">Reinforcement Learning</string>
+    <string name="unsupervised_discovery">Unsupervised Discovery</string>
+
+    <!-- AI Accessibility -->
+    <string name="accessibility_ai_insight">AI-generated insight about %1$s</string>
+    <string name="accessibility_ai_recommendation">AI recommendation for %1$s</string>
+    <string name="accessibility_ai_confidence">AI confidence level %1$d percent</string>
+    <string name="accessibility_ai_processing">AI is processing your sleep data</string>
+    <string name="accessibility_ai_model_status">AI model status: %1$s</string>
+    <string name="accessibility_personalization_level">Personalization level: %1$s</string>
+
+    <!-- ========== MISSING STRINGS - ADD THESE TO YOUR strings.xml ========== -->
+
+    <!-- Primary Insight Card Strings -->
+    <string name="primary_insight_title">Sleep Quality Insight</string>
+    <string name="primary_insight_description">Your sleep pattern shows improvement</string>
+
+    <!-- Pattern Insight Card Strings -->
+    <string name="pattern_insight_title">Sleep Pattern Analysis</string>
+    <string name="pattern_insight_text">Consistent bedtime detected</string>
+
+    <!-- Recommendation Insight Card Strings -->
+    <string name="recommendation_insight_title">Sleep Recommendations</string>
+    <string name="recommendation_insight_text">Try reducing screen time 1 hour before bed</string>
+    <string name="latest_recommendation">Latest recommendation based on your data</string>
+    <string name="recommendations_count">%1$d recommendations available</string>
+
+    <!-- Weekly Trend Card Strings -->
+    <string name="weekly_trend_description">Your sleep trend this week</string>
+    <string name="trend_indicator">Trend Status</string>
+
+    <!-- Analytics Layout Strings -->
+    <string name="analytics_overview">Analytics Overview</string>
+    <string name="detailed_analytics">Detailed Analytics</string>
+    <string name="analytics_session_count">Sessions Analyzed: %1$d</string>
+    <string name="analytics_quality">Average Quality: %1$.1f/10</string>
+    <string name="analytics_efficiency">Sleep Efficiency: %1$.1f%%</string>
+    <string name="analytics_comparison">Performance Comparison</string>
+    <string name="analytics_trends">Trend Analysis</string>
+
+    <!-- Trends Layout Strings -->
+    <string name="trends_analysis">Trends Analysis</string>
+    <string name="trends_summary">Your sleep trends over time</string>
+
+    <!-- Quality Report Strings -->
+    <string name="quality_report">Quality Report</string>
+    <string name="quality_grade">Sleep Grade: %1$s</string>
+    <string name="quality_score_detail">Quality Score Details</string>
+    <string name="strongest_factor">Strongest Factor: %1$s</string>
+    <string name="weakest_factor">Weakest Factor: %1$s</string>
+
+    <!-- Quality Insights Strings -->
+    <string name="quality_insights_count">%1$d quality insights</string>
+    <string name="top_quality_insight">Top Quality Insight</string>
+    <string name="top_quality_insight_description">Quality insight description</string>
+
+    <!-- Comparison Layout Strings -->
+    <string name="comparison_analysis">Comparison Analysis</string>
+    <string name="performance_rating">Performance Rating: %1$s</string>
+    <string name="comparison_insight">Comparison insights based on your data</string>
+
+    <!-- Performance Layout Strings -->
+    <string name="performance_monitoring">Performance Monitoring</string>
+    <string name="memory_usage">Memory: %1$.1f MB</string>
+    <string name="data_queue_size">Queue: %1$d items</string>
+    <string name="avg_save_time">Avg Save: %1$dms</string>
+
+    <!-- Data Integrity Strings -->
+    <string name="data_integrity">Data Integrity</string>
+    <string name="data_integrity_status">Data Quality: %1$s</string>
+    <string name="data_success_rate">Success Rate: %1$.1f%%</string>
+
+    <!-- Trend Indicators that were missing -->
+    <string name="trend_indicator_text">Trend Direction</string>
+    <string name="recommendations_count_text">%1$d recommendations</string>
+    <string name="latest_recommendation_text">Latest AI recommendation</string>
+    <string name="recommendation_priority_indicator">Priority Level</string>
+
+    <!-- Analytics Session Count that's referenced in MainActivity -->
+    <string name="analytics_session_count_text">%1$d sessions analyzed</string>
+    <string name="analytics_quality_text">Overall Quality: %1$.1f</string>
+    <string name="analytics_efficiency_text">Avg Efficiency: %1$.1f%%</string>
+
+    <!-- Quality Grade and Score Detail (referenced in MainActivity) -->
+    <string name="quality_grade_text">Sleep Grade</string>
+    <string name="quality_score_detail_text">Quality breakdown details</string>
+
+    <!-- Strongest/Weakest Factor (referenced in MainActivity) -->
+    <string name="strongest_factor_text">Best performing factor</string>
+    <string name="weakest_factor_text">Area for improvement</string>
+
+    <!-- Quality Insights Layout (referenced in MainActivity) -->
+    <string name="quality_insights_count_text">%1$d quality insights available</string>
+    <string name="top_quality_insight_text">Primary quality insight</string>
+    <string name="top_quality_insight_description_text">Detailed analysis of sleep quality</string>
+
+    <!-- Performance texts (referenced in MainActivity) -->
+    <string name="performance_rating_text">Performance Rating</string>
+    <string name="comparison_insight_text">Comparative analysis</string>
+    <string name="memory_usage_text">Memory Usage</string>
+    <string name="data_queue_size_text">Data Queue Size</string>
+    <string name="avg_save_time_text">Average Save Time</string>
+    <string name="performance_indicator">Performance Status</string>
+
+    <!-- Data Integrity texts (referenced in MainActivity) -->
+    <string name="data_integrity_text">Data Integrity Status</string>
+    <string name="data_success_rate_text">Data Success Rate</string>
+
+    <!-- Additional missing layout strings -->
+    <string name="analytics_layout">Analytics Dashboard</string>
+    <string name="analytics_expanded_layout">Expanded Analytics View</string>
+    <string name="live_tracking_layout">Live Sleep Tracking</string>
+    <string name="live_sensor_data">Live Sensor Data</string>
+    <string name="real_time_charts">Real-time Charts</string>
+    <string name="real_time_metrics">Real-time sleep metrics visualization</string>
+
+    <!-- Missing placeholders that are referenced -->
+    <string name="phase_confidence_placeholder">Confidence: --%</string>
+    <string name="session_duration_placeholder">Duration: --:--</string>
+    <string name="movement_intensity_text">Movement Intensity</string>
+    <string name="movement_count_placeholder">-- movements</string>
+    <string name="noise_level_text">Noise Level</string>
+    <string name="noise_count_placeholder">-- noise events</string>
+    <string name="environmental_score_text">Environmental Score</string>
+    <string name="restlessness_level_text">Restlessness Level</string>
+    <string name="live_quality_estimate_text">Live Quality Estimate</string>
+
+    <!-- Missing sensor and data save strings -->
+    <string name="sensors_healthy">All sensors healthy</string>
+    <string name="data_saved">Data automatically saved</string>
+
+    <!-- Missing progress and session strings -->
+    <string name="session_progress">Session Progress</string>
+    <string name="no_sessions_yet">No sleep sessions recorded yet</string>
+    <string name="sensors_ready">Sensors ready for tracking</string>
+
+</resources>

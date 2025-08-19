@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <!-- Minimal placeholders for Loading ViewBinding -->
+    <ProgressBar android:id="@+id/loadingSpinner" android:layout_width="0dp" android:layout_height="0dp" />
+    <TextView android:id="@+id/loadingText" android:layout_width="0dp" android:layout_height="0dp" />
+
+    <!-- Actual minimal visible content -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:background="@color/surface_dark"
+        android:orientation="horizontal">
+
+        <ProgressBar
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="8dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Loading session..."
+            android:textColor="@color/text_secondary" />
+
+    </LinearLayout>
+
+</LinearLayout>

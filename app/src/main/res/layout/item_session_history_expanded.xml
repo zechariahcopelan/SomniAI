@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <!-- Minimal placeholders for Expanded ViewBinding -->
+    <TextView android:id="@+id/sessionTitle" android:layout_width="0dp" android:layout_height="0dp" />
+    <TextView android:id="@+id/sessionDate" android:layout_width="0dp" android:layout_height="0dp" />
+    <TextView android:id="@+id/sessionDuration" android:layout_width="0dp" android:layout_height="0dp" />
+    <TextView android:id="@+id/qualityScore" android:layout_width="0dp" android:layout_height="0dp" />
+    <TextView android:id="@+id/efficiencyScore" android:layout_width="0dp" android:layout_height="0dp" />
+    <TextView android:id="@+id/sleepPhases" android:layout_width="0dp" android:layout_height="0dp" />
+    <TextView android:id="@+id/movementData" android:layout_width="0dp" android:layout_height="0dp" />
+    <TextView android:id="@+id/noiseData" android:layout_width="0dp" android:layout_height="0dp" />
+    <TextView android:id="@+id/environmentData" android:layout_width="0dp" android:layout_height="0dp" />
+    <TextView android:id="@+id/restlessnessScore" android:layout_width="0dp" android:layout_height="0dp" />
+    <TextView android:id="@+id/deepSleepDuration" android:layout_width="0dp" android:layout_height="0dp" />
+    <TextView android:id="@+id/remSleepDuration" android:layout_width="0dp" android:layout_height="0dp" />
+    <TextView android:id="@+id/lightSleepDuration" android:layout_width="0dp" android:layout_height="0dp" />
+    <TextView android:id="@+id/awakeDuration" android:layout_width="0dp" android:layout_height="0dp" />
+    <TextView android:id="@+id/insights" android:layout_width="0dp" android:layout_height="0dp" />
+    <TextView android:id="@+id/recommendations" android:layout_width="0dp" android:layout_height="0dp" />
+
+    <!-- Actual minimal visible content -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:text="Expanded Session Item"
+        android:gravity="center"
+        android:background="@color/surface_dark"
+        android:textColor="@color/text_primary" />
+
+</LinearLayout>

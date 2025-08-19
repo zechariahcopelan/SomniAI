@@ -1,0 +1,787 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- ========== BASE THEMES ========== -->
+
+    <!-- Main Application Theme - Dark Material Design -->
+    <style name="Theme.SomniAI" parent="Theme.Material3.DayNight">
+        <!-- Primary brand color -->
+        <item name="colorPrimary">@color/primary_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryContainer">@color/primary_light</item>
+        <item name="colorOnPrimaryContainer">@color/white</item>
+
+        <!-- Secondary brand color -->
+        <item name="colorSecondary">@color/accent_green</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorSecondaryContainer">@color/accent_green</item>
+        <item name="colorOnSecondaryContainer">@color/white</item>
+
+        <!-- Tertiary brand color -->
+        <item name="colorTertiary">@color/accent_amber</item>
+        <item name="colorOnTertiary">@color/white</item>
+        <item name="colorTertiaryContainer">@color/accent_amber</item>
+        <item name="colorOnTertiaryContainer">@color/white</item>
+
+        <!-- Background colors -->
+        <item name="android:colorBackground">@color/background_dark</item>
+        <item name="colorOnBackground">@color/white</item>
+        <item name="colorSurface">@color/surface_dark</item>
+        <item name="colorOnSurface">@color/white</item>
+        <item name="colorSurfaceVariant">@color/surface_dark</item>
+        <item name="colorOnSurfaceVariant">@color/text_secondary</item>
+
+        <!-- Error colors -->
+        <item name="colorError">@color/error</item>
+        <item name="colorOnError">@color/white</item>
+        <item name="colorErrorContainer">@color/error</item>
+        <item name="colorOnErrorContainer">@color/white</item>
+
+        <!-- Outline and other surface colors -->
+        <item name="colorOutline">@color/text_secondary</item>
+        <item name="colorOutlineVariant">@color/primary_light</item>
+        <!--<item name="colorSurfaceTint">@color/accent_green</item> -->
+
+        <!-- System UI -->
+        <item name="android:statusBarColor">@color/background_dark</item>
+        <item name="android:navigationBarColor">@color/background_dark</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+
+        <!-- Material Design Components -->
+        <item name="materialCardViewStyle">@style/Widget.SomniAI.CardView</item>
+        <item name="extendedFloatingActionButtonStyle">@style/Widget.SomniAI.ExtendedFloatingActionButton</item>
+        <item name="materialButtonStyle">@style/Widget.SomniAI.Button</item>
+        <item name="materialButtonOutlinedStyle">@style/Widget.SomniAI.Button.Outlined</item>
+
+        <!-- Text Appearance -->
+        <item name="textAppearanceHeadline1">@style/TextAppearance.SomniAI.Headline1</item>
+        <item name="textAppearanceHeadline2">@style/TextAppearance.SomniAI.Headline2</item>
+        <item name="textAppearanceHeadline3">@style/TextAppearance.SomniAI.Headline3</item>
+        <item name="textAppearanceBody1">@style/TextAppearance.SomniAI.Body1</item>
+        <item name="textAppearanceBody2">@style/TextAppearance.SomniAI.Body2</item>
+        <item name="textAppearanceCaption">@style/TextAppearance.SomniAI.Caption</item>
+
+        <!-- Window properties -->
+        <item name="android:windowBackground">@color/background_dark</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowSharedElementEnterTransition">@transition/shared_element</item>
+        <item name="android:windowSharedElementExitTransition">@transition/shared_element</item>
+    </style>
+
+    <!-- No Action Bar Theme Variant -->
+    <style name="Theme.SomniAI.NoActionBar" parent="Theme.SomniAI">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:fitsSystemWindows">true</item>
+    </style>
+
+    <!-- Splash Screen Theme -->
+    <style name="Theme.SomniAI.Splash" parent="Theme.SomniAI.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <!-- Settings Theme
+    <style name="Theme.SomniAI.Settings" parent="Theme.SomniAI">
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay.SomniAI</item>
+        <item name="android:windowBackground">@color/background_dark</item>
+    </style> -->
+
+    <!-- ========== COMPONENT STYLES ========== -->
+
+    <!-- Card Views -->
+    <style name="Widget.SomniAI.CardView" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardBackgroundColor">@color/surface_dark</item>
+        <item name="cardCornerRadius">16dp</item>
+        <item name="cardElevation">8dp</item>
+        <item name="cardMaxElevation">12dp</item>
+        <item name="contentPadding">16dp</item>
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
+    </style>
+
+    <style name="Widget.SomniAI.CardView.Metric" parent="Widget.SomniAI.CardView">
+        <item name="cardCornerRadius">12dp</item>
+        <item name="cardElevation">4dp</item>
+        <item name="contentPadding">16dp</item>
+    </style>
+
+    <style name="Widget.SomniAI.CardView.Status" parent="Widget.SomniAI.CardView">
+        <item name="cardCornerRadius">16dp</item>
+        <item name="cardElevation">8dp</item>
+        <item name="contentPadding">24dp</item>
+        <item name="strokeColor">@color/accent_green</item>
+        <item name="strokeWidth">0dp</item>
+    </style>
+
+    <!-- AI Insights Card Views -->
+    <style name="Widget.SomniAI.CardView.Insight" parent="Widget.SomniAI.CardView">
+        <item name="cardCornerRadius">20dp</item>
+        <item name="cardElevation">6dp</item>
+        <item name="contentPadding">20dp</item>
+        <item name="strokeColor">@color/accent_green</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="android:layout_margin">8dp</item>
+    </style>
+
+    <style name="Widget.SomniAI.CardView.Insight.Premium" parent="Widget.SomniAI.CardView.Insight">
+        <item name="cardBackgroundColor">@color/insight_premium_background</item>
+        <item name="strokeColor">@color/insight_premium_accent</item>
+        <item name="cardElevation">10dp</item>
+    </style>
+
+    <style name="Widget.SomniAI.CardView.Insight.Recommendation" parent="Widget.SomniAI.CardView.Insight">
+        <item name="cardBackgroundColor">@color/insight_recommendation_background</item>
+        <item name="strokeColor">@color/accent_amber</item>
+        <item name="cardCornerRadius">16dp</item>
+    </style>
+
+    <style name="Widget.SomniAI.CardView.Insight.Warning" parent="Widget.SomniAI.CardView.Insight">
+        <item name="cardBackgroundColor">@color/insight_warning_background</item>
+        <item name="strokeColor">@color/error</item>
+        <item name="strokeWidth">2dp</item>
+    </style>
+
+    <style name="Widget.SomniAI.CardView.Insight.Positive" parent="Widget.SomniAI.CardView.Insight">
+        <item name="cardBackgroundColor">@color/insight_positive_background</item>
+        <item name="strokeColor">@color/insight_positive_accent</item>
+    </style>
+
+    <style name="Widget.SomniAI.CardView.AIProcessing" parent="Widget.SomniAI.CardView">
+        <item name="cardCornerRadius">24dp</item>
+        <item name="cardElevation">12dp</item>
+        <item name="contentPadding">24dp</item>
+        <item name="cardBackgroundColor">@color/ai_processing_background</item>
+        <item name="strokeColor">@color/ai_processing_accent</item>
+        <item name="strokeWidth">2dp</item>
+    </style>
+
+    <!-- Confidence Indicator Cards -->
+    <style name="Widget.SomniAI.CardView.Confidence" parent="Widget.SomniAI.CardView.Metric">
+        <item name="cardCornerRadius">8dp</item>
+        <item name="cardElevation">2dp</item>
+        <item name="contentPadding">12dp</item>
+        <item name="android:layout_margin">4dp</item>
+    </style>
+
+    <style name="Widget.SomniAI.CardView.Confidence.High" parent="Widget.SomniAI.CardView.Confidence">
+        <item name="strokeColor">@color/confidence_high</item>
+        <item name="strokeWidth">2dp</item>
+    </style>
+
+    <style name="Widget.SomniAI.CardView.Confidence.Medium" parent="Widget.SomniAI.CardView.Confidence">
+        <item name="strokeColor">@color/confidence_medium</item>
+        <item name="strokeWidth">1dp</item>
+    </style>
+
+    <style name="Widget.SomniAI.CardView.Confidence.Low" parent="Widget.SomniAI.CardView.Confidence">
+        <item name="strokeColor">@color/confidence_low</item>
+        <item name="strokeWidth">1dp</item>
+    </style>
+
+    <!-- Buttons -->
+    <style name="Widget.SomniAI.Button" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@color/accent_green</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="cornerRadius">12dp</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+
+    <style name="Widget.SomniAI.Button.Outlined" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="strokeColor">@color/accent_green</item>
+        <item name="strokeWidth">2dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="cornerRadius">12dp</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="rippleColor">@color/accent_green</item>
+    </style>
+
+    <style name="Widget.SomniAI.Button.Danger" parent="Widget.SomniAI.Button.Outlined">
+        <item name="strokeColor">@color/error</item>
+        <item name="android:textColor">@color/error</item>
+        <item name="rippleColor">@color/error</item>
+    </style>
+
+    <style name="Widget.SomniAI.Button.Warning" parent="Widget.SomniAI.Button.Outlined">
+        <item name="strokeColor">@color/accent_amber</item>
+        <item name="android:textColor">@color/accent_amber</item>
+        <item name="rippleColor">@color/accent_amber</item>
+    </style>
+
+    <!-- AI-specific Buttons -->
+    <style name="Widget.SomniAI.Button.AI" parent="Widget.SomniAI.Button">
+        <item name="backgroundTint">@color/ai_primary</item>
+        <item name="cornerRadius">16dp</item>
+        <item name="android:letterSpacing">0.03</item>
+        <item name="iconTint">@color/white</item>
+        <item name="iconGravity">textStart</item>
+    </style>
+
+    <style name="Widget.SomniAI.Button.Insight.Action" parent="Widget.SomniAI.Button.Outlined">
+        <item name="strokeColor">@color/insight_action_accent</item>
+        <item name="android:textColor">@color/insight_action_accent</item>
+        <item name="rippleColor">@color/insight_action_accent</item>
+        <item name="cornerRadius">20dp</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:minHeight">36dp</item>
+    </style>
+
+    <style name="Widget.SomniAI.Button.Insight.Dismiss" parent="Widget.SomniAI.Button.Outlined">
+        <item name="strokeColor">@color/text_secondary</item>
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="rippleColor">@color/text_secondary</item>
+        <item name="cornerRadius">18dp</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:minHeight">32dp</item>
+    </style>
+
+    <!-- Extended Floating Action Button -->
+    <style name="Widget.SomniAI.ExtendedFloatingActionButton" parent="Widget.Material3.ExtendedFloatingActionButton.Primary">
+        <item name="backgroundTint">@color/accent_green</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="iconTint">@color/white</item>
+        <item name="iconSize">24dp</item>
+        <item name="cornerRadius">28dp</item>
+        <item name="elevation">8dp</item>
+        <item name="pressedTranslationZ">12dp</item>
+    </style>
+
+    <!-- AI Insights FAB -->
+    <style name="Widget.SomniAI.ExtendedFloatingActionButton.AI" parent="Widget.SomniAI.ExtendedFloatingActionButton">
+        <item name="backgroundTint">@color/ai_primary</item>
+        <item name="cornerRadius">32dp</item>
+        <item name="elevation">12dp</item>
+        <item name="pressedTranslationZ">16dp</item>
+    </style>
+
+    <!-- Toolbar -->
+    <style name="Widget.SomniAI.Toolbar" parent="Widget.Material3.Toolbar">
+        <item name="android:background">@color/primary_dark</item>
+        <item name="titleTextColor">@color/white</item>
+        <item name="subtitleTextColor">@color/text_secondary</item>
+        <item name="android:elevation">4dp</item>
+        <item name="popupTheme">@style/ThemeOverlay.SomniAI.PopupMenu</item>
+    </style>
+
+    <!-- App Bar Layout -->
+    <style name="Widget.SomniAI.AppBarLayout" parent="Widget.Material3.AppBarLayout">
+        <item name="android:background">@color/primary_dark</item>
+        <item name="elevation">4dp</item>
+    </style>
+
+    <!-- Progress Bars -->
+    <style name="Widget.SomniAI.ProgressBar" parent="Widget.AppCompat.ProgressBar.Horizontal">
+        <item name="android:progressTint">@color/accent_green</item>
+        <item name="android:progressBackgroundTint">@color/text_secondary</item>
+        <item name="android:secondaryProgressTint">@color/accent_amber</item>
+        <item name="android:minHeight">6dp</item>
+        <item name="android:maxHeight">6dp</item>
+    </style>
+
+    <!-- AI Progress Indicators -->
+    <style name="Widget.SomniAI.ProgressBar.AI" parent="Widget.SomniAI.ProgressBar">
+        <item name="android:progressTint">@color/ai_primary</item>
+        <item name="android:secondaryProgressTint">@color/ai_secondary</item>
+        <item name="android:minHeight">8dp</item>
+        <item name="android:maxHeight">8dp</item>
+    </style>
+
+    <style name="Widget.SomniAI.ProgressBar.Confidence" parent="Widget.SomniAI.ProgressBar">
+        <item name="android:minHeight">4dp</item>
+        <item name="android:maxHeight">4dp</item>
+    </style>
+
+    <style name="Widget.SomniAI.CircularProgressIndicator" parent="Widget.Material3.CircularProgressIndicator">
+        <item name="indicatorColor">@color/ai_primary</item>
+        <item name="trackColor">@color/ai_track</item>
+        <item name="indicatorSize">24dp</item>
+        <item name="trackThickness">3dp</item>
+    </style>
+
+    <!-- Text Input Layout -->
+    <style name="Widget.SomniAI.TextInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/accent_green</item>
+        <!--<item name="boxStrokeColorStateList">@color/text_input_stroke_color</item>-->
+        <item name="hintTextColor">@color/text_secondary</item>
+        <item name="android:textColorHint">@color/text_secondary</item>
+        <item name="boxCornerRadiusTopStart">12dp</item>
+        <item name="boxCornerRadiusTopEnd">12dp</item>
+        <item name="boxCornerRadiusBottomStart">12dp</item>
+        <item name="boxCornerRadiusBottomEnd">12dp</item>
+    </style>
+
+    <!-- ========== TEXT APPEARANCES ========== -->
+
+    <!-- Headlines -->
+    <style name="TextAppearance.SomniAI.Headline1" parent="TextAppearance.Material3.HeadlineLarge">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="fontFamily">@font/roboto_bold</item>
+    </style>
+
+    <style name="TextAppearance.SomniAI.Headline2" parent="TextAppearance.Material3.HeadlineMedium">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="fontFamily">@font/roboto_bold</item>
+    </style>
+
+    <style name="TextAppearance.SomniAI.Headline3" parent="TextAppearance.Material3.HeadlineSmall">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="fontFamily">@font/roboto_medium</item>
+    </style>
+
+    <!-- Body Text -->
+    <style name="TextAppearance.SomniAI.Body1" parent="TextAppearance.Material3.BodyLarge">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="fontFamily">@font/roboto_regular</item>
+    </style>
+
+    <style name="TextAppearance.SomniAI.Body2" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="fontFamily">@font/roboto_regular</item>
+    </style>
+
+    <!-- Caption and Labels -->
+    <style name="TextAppearance.SomniAI.Caption" parent="TextAppearance.Material3.LabelSmall">
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:letterSpacing">0.03</item>
+        <item name="fontFamily">@font/roboto_regular</item>
+    </style>
+
+    <style name="TextAppearance.SomniAI.Label" parent="TextAppearance.Material3.LabelMedium">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="fontFamily">@font/roboto_medium</item>
+    </style>
+
+    <!-- Metric Text -->
+    <style name="TextAppearance.SomniAI.Metric.Value" parent="TextAppearance.SomniAI.Headline2">
+        <item name="android:textColor">@color/accent_green</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.SomniAI.Metric.Label" parent="TextAppearance.SomniAI.Caption">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <!-- AI Insights Text Appearances -->
+    <style name="TextAppearance.SomniAI.Insight.Title" parent="TextAppearance.SomniAI.Headline3">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/insight_title_color</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="fontFamily">@font/roboto_bold</item>
+    </style>
+
+    <style name="TextAppearance.SomniAI.Insight.Description" parent="TextAppearance.SomniAI.Body1">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/insight_description_color</item>
+        <item name="android:lineSpacingExtra">2dp</item>
+    </style>
+
+    <style name="TextAppearance.SomniAI.Insight.Recommendation" parent="TextAppearance.SomniAI.Body2">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/insight_recommendation_color</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:lineSpacingExtra">1dp</item>
+    </style>
+
+    <style name="TextAppearance.SomniAI.Insight.Category" parent="TextAppearance.SomniAI.Caption">
+        <item name="android:textColor">@color/insight_category_color</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:letterSpacing">0.05</item>
+        <item name="fontFamily">@font/roboto_medium</item>
+    </style>
+
+    <style name="TextAppearance.SomniAI.Insight.Priority" parent="TextAppearance.SomniAI.Caption">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.04</item>
+    </style>
+
+    <style name="TextAppearance.SomniAI.Insight.Priority.High" parent="TextAppearance.SomniAI.Insight.Priority">
+        <item name="android:textColor">@color/priority_high</item>
+    </style>
+
+    <style name="TextAppearance.SomniAI.Insight.Priority.Medium" parent="TextAppearance.SomniAI.Insight.Priority">
+        <item name="android:textColor">@color/priority_medium</item>
+    </style>
+
+    <style name="TextAppearance.SomniAI.Insight.Priority.Low" parent="TextAppearance.SomniAI.Insight.Priority">
+        <item name="android:textColor">@color/priority_low</item>
+    </style>
+
+    <!-- AI Processing Text -->
+    <style name="TextAppearance.SomniAI.AI.Status" parent="TextAppearance.SomniAI.Body1">
+        <item name="android:textColor">@color/ai_status_color</item>
+        <item name="android:textSize">16sp</item>
+        <item name="fontFamily">@font/roboto_medium</item>
+    </style>
+
+    <style name="TextAppearance.SomniAI.AI.Model" parent="TextAppearance.SomniAI.Caption">
+        <item name="android:textColor">@color/ai_model_color</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="fontFamily">monospace</item>
+    </style>
+
+    <style name="TextAppearance.SomniAI.AI.Confidence" parent="TextAppearance.SomniAI.Label">
+        <item name="android:textSize">13sp</item>
+        <item name="fontFamily">@font/roboto_bold</item>
+    </style>
+
+    <style name="TextAppearance.SomniAI.AI.Confidence.High" parent="TextAppearance.SomniAI.AI.Confidence">
+        <item name="android:textColor">@color/confidence_high</item>
+    </style>
+
+    <style name="TextAppearance.SomniAI.AI.Confidence.Medium" parent="TextAppearance.SomniAI.AI.Confidence">
+        <item name="android:textColor">@color/confidence_medium</item>
+    </style>
+
+    <style name="TextAppearance.SomniAI.AI.Confidence.Low" parent="TextAppearance.SomniAI.AI.Confidence">
+        <item name="android:textColor">@color/confidence_low</item>
+    </style>
+
+    <!-- Personalization Text -->
+    <style name="TextAppearance.SomniAI.Personalization.Level" parent="TextAppearance.SomniAI.Body2">
+        <item name="android:textColor">@color/personalization_color</item>
+        <item name="android:textSize">13sp</item>
+        <item name="fontFamily">@font/roboto_medium</item>
+    </style>
+
+    <style name="TextAppearance.SomniAI.Personalization.Progress" parent="TextAppearance.SomniAI.Caption">
+        <item name="android:textColor">@color/personalization_progress_color</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <!-- Trend Analysis Text -->
+    <style name="TextAppearance.SomniAI.Trend.Direction" parent="TextAppearance.SomniAI.Label">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.SomniAI.Trend.Improving" parent="TextAppearance.SomniAI.Trend.Direction">
+        <item name="android:textColor">@color/trend_improving</item>
+    </style>
+
+    <style name="TextAppearance.SomniAI.Trend.Stable" parent="TextAppearance.SomniAI.Trend.Direction">
+        <item name="android:textColor">@color/trend_stable</item>
+    </style>
+
+    <style name="TextAppearance.SomniAI.Trend.Declining" parent="TextAppearance.SomniAI.Trend.Direction">
+        <item name="android:textColor">@color/trend_declining</item>
+    </style>
+
+    <!-- ========== PREFERENCE THEMES ==========
+
+    <style name="PreferenceThemeOverlay.SomniAI" parent="@style/PreferenceThemeOverlay.v14.Material">
+        <item name="preferenceCategoryStyle">@style/Preference.Category.SomniAI</item>
+        <item name="preferenceStyle">@style/Preference.SomniAI</item>
+        <item name="switchPreferenceCompatStyle">@style/Preference.SwitchPreferenceCompat.SomniAI</item>
+        <item name="seekBarPreferenceStyle">@style/Preference.SeekBarPreference.SomniAI</item>
+    </style>
+
+    <style name="Preference.Category.SomniAI" parent="@style/Preference.Category.Material">
+        <item name="android:textColor">@color/accent_green</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Preference.SomniAI" parent="@style/Preference.Material">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+        <item name="android:background">?android:attr/selectableItemBackground</item>
+    </style>
+
+    <style name="Preference.SwitchPreferenceCompat.SomniAI" parent="@style/Preference.SwitchPreferenceCompat.Material">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+        <item name="switchTextAppearanceOn">@style/TextAppearance.SomniAI.Switch</item>
+        <item name="switchTextAppearanceOff">@style/TextAppearance.SomniAI.Switch</item>
+    </style>
+
+   <style name="Preference.SeekBarPreference.SomniAI" parent="@style/Preference.SeekBarPreference.Material">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+    </style>
+
+    <style name="TextAppearance.SomniAI.Switch" parent="TextAppearance.Material3.LabelMedium">
+        <item name="android:textColor">@color/white</item>
+    </style>  -->
+
+    <!-- AI Settings Preferences
+    <style name="Preference.Category.SomniAI.AI" parent="Preference.Category.SomniAI">
+        <item name="android:textColor">@color/ai_primary</item>
+    </style>
+
+    <style name="Preference.SomniAI.AI" parent="Preference.SomniAI">
+        <item name="android:icon">@drawable/ic_ai</item>
+    </style> -->
+
+    <!-- ========== OVERLAY THEMES ========== -->
+
+    <style name="ThemeOverlay.SomniAI.PopupMenu" parent="ThemeOverlay.Material3.Dark">
+        <item name="android:colorBackground">@color/surface_dark</item>
+        <item name="colorSurface">@color/surface_dark</item>
+        <item name="colorOnSurface">@color/white</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="ThemeOverlay.SomniAI.BottomSheet" parent="ThemeOverlay.Material3.BottomSheetDialog">
+        <item name="android:colorBackground">@color/surface_dark</item>
+        <item name="colorSurface">@color/surface_dark</item>
+        <item name="colorOnSurface">@color/white</item>
+        <item name="android:windowIsFloating">false</item>
+    </style>
+
+    <style name="ThemeOverlay.SomniAI.Dialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="android:colorBackground">@color/surface_dark</item>
+        <item name="colorSurface">@color/surface_dark</item>
+        <item name="colorOnSurface">@color/white</item>
+        <item name="colorPrimary">@color/accent_green</item>
+        <item name="materialAlertDialogTitleTextStyle">@style/TextAppearance.SomniAI.Headline3</item>
+        <item name="materialAlertDialogBodyTextStyle">@style/TextAppearance.SomniAI.Body1</item>
+    </style>
+
+    <!-- AI Insights Bottom Sheet -->
+    <style name="ThemeOverlay.SomniAI.BottomSheet.Insights" parent="ThemeOverlay.SomniAI.BottomSheet">
+        <item name="android:colorBackground">@color/insights_bottom_sheet_background</item>
+        <item name="colorSurface">@color/insights_bottom_sheet_background</item>
+    </style>
+
+    <!-- AI Processing Dialog -->
+    <style name="ThemeOverlay.SomniAI.Dialog.AI" parent="ThemeOverlay.SomniAI.Dialog">
+        <item name="android:colorBackground">@color/ai_dialog_background</item>
+        <item name="colorSurface">@color/ai_dialog_background</item>
+        <item name="colorPrimary">@color/ai_primary</item>
+    </style>
+
+    <!-- ========== CUSTOM SHAPE STYLES ========== -->
+
+    <style name="ShapeAppearance.SomniAI.SmallComponent" parent="ShapeAppearance.Material3.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">8dp</item>
+    </style>
+
+    <style name="ShapeAppearance.SomniAI.MediumComponent" parent="ShapeAppearance.Material3.MediumComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">12dp</item>
+    </style>
+
+    <style name="ShapeAppearance.SomniAI.LargeComponent" parent="ShapeAppearance.Material3.LargeComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+    </style>
+
+    <!-- AI Insights Shape Appearances -->
+    <style name="ShapeAppearance.SomniAI.Insight" parent="ShapeAppearance.SomniAI.LargeComponent">
+        <item name="cornerSize">20dp</item>
+    </style>
+
+    <style name="ShapeAppearance.SomniAI.Insight.Premium" parent="ShapeAppearance.SomniAI.Insight">
+        <item name="cornerSize">24dp</item>
+    </style>
+
+    <style name="ShapeAppearance.SomniAI.Confidence.Indicator" parent="ShapeAppearance.SomniAI.SmallComponent">
+        <item name="cornerSize">4dp</item>
+    </style>
+
+    <style name="ShapeAppearance.SomniAI.AI.Processing" parent="ShapeAppearance.SomniAI.LargeComponent">
+        <item name="cornerSize">28dp</item>
+    </style>
+
+    <!-- ========== ANIMATION STYLES ========== -->
+
+    <style name="Animation.SomniAI.Activity" parent="android:Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_in_right</item>
+        <item name="android:activityOpenExitAnimation">@anim/slide_out_left</item>
+        <item name="android:activityCloseEnterAnimation">@anim/slide_in_left</item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_out_right</item>
+    </style>
+
+    <!-- AI Insights Animations
+    //<style name="Animation.SomniAI.Insight.Enter">
+    //    <item name="android:windowEnterAnimation">@anim/insight_fade_in</item>
+    //    <item name="android:windowExitAnimation">@anim/insight_fade_out</item>
+    //</style>-->
+
+    <!--<style name="Animation.SomniAI.AI.Processing">
+    //    <item name="android:windowEnterAnimation">@anim/ai_processing_enter</item>
+    //    <item name="android:windowExitAnimation">@anim/ai_processing_exit</item>
+    //</style> -->
+
+    <!-- ========== WIDGET STYLES ========== -->
+
+    <style name="Widget.SomniAI.Chip" parent="Widget.Material3.Chip.Filter">
+        <item name="chipBackgroundColor">@color/surface_dark</item>
+        <item name="chipStrokeColor">@color/accent_green</item>
+        <item name="chipStrokeWidth">1dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="chipCornerRadius">16dp</item>
+        <item name="checkedIconTint">@color/accent_green</item>
+        <item name="chipIconTint">@color/accent_green</item>
+    </style>
+
+    <!-- AI Model Selection Chips -->
+    <style name="Widget.SomniAI.Chip.AIModel" parent="Widget.SomniAI.Chip">
+        <item name="chipBackgroundColor">@color/ai_chip_background</item>
+        <item name="chipStrokeColor">@color/ai_primary</item>
+        <item name="checkedIconTint">@color/ai_primary</item>
+        <item name="chipIconTint">@color/ai_primary</item>
+        <item name="chipCornerRadius">20dp</item>
+    </style>
+
+    <style name="Widget.SomniAI.Chip.Insight.Category" parent="Widget.SomniAI.Chip">
+        <item name="chipBackgroundColor">@color/insight_category_chip_background</item>
+        <item name="chipStrokeColor">@color/insight_category_chip_stroke</item>
+        <item name="chipCornerRadius">12dp</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="Widget.SomniAI.Chip.Confidence" parent="Widget.SomniAI.Chip">
+        <item name="chipCornerRadius">8dp</item>
+        <item name="android:textSize">10sp</item>
+        <item name="chipMinHeight">24dp</item>
+    </style>
+
+    <style name="Widget.SomniAI.Chip.Confidence.High" parent="Widget.SomniAI.Chip.Confidence">
+        <item name="chipBackgroundColor">@color/confidence_high_background</item>
+        <item name="chipStrokeColor">@color/confidence_high</item>
+        <item name="android:textColor">@color/confidence_high</item>
+    </style>
+
+    <style name="Widget.SomniAI.Chip.Confidence.Medium" parent="Widget.SomniAI.Chip.Confidence">
+        <item name="chipBackgroundColor">@color/confidence_medium_background</item>
+        <item name="chipStrokeColor">@color/confidence_medium</item>
+        <item name="android:textColor">@color/confidence_medium</item>
+    </style>
+
+    <style name="Widget.SomniAI.Chip.Confidence.Low" parent="Widget.SomniAI.Chip.Confidence">
+        <item name="chipBackgroundColor">@color/confidence_low_background</item>
+        <item name="chipStrokeColor">@color/confidence_low</item>
+        <item name="android:textColor">@color/confidence_low</item>
+    </style>
+
+    <style name="Widget.SomniAI.TabLayout" parent="Widget.Material3.TabLayout">
+        <item name="android:background">@color/primary_dark</item>
+        <item name="tabTextColor">@color/text_secondary</item>
+        <item name="tabSelectedTextColor">@color/white</item>
+        <item name="tabIndicatorColor">@color/accent_green</item>
+        <item name="tabIndicatorHeight">3dp</item>
+        <item name="tabRippleColor">@color/accent_green</item>
+    </style>
+
+    <!-- AI Insights Tab Layout -->
+    <style name="Widget.SomniAI.TabLayout.Insights" parent="Widget.SomniAI.TabLayout">
+        <item name="tabIndicatorColor">@color/ai_primary</item>
+        <item name="tabRippleColor">@color/ai_primary</item>
+        <item name="tabSelectedTextColor">@color/ai_primary</item>
+    </style>
+
+    <style name="Widget.SomniAI.BottomNavigation" parent="Widget.Material3.BottomNavigationView">
+        <item name="android:background">@color/surface_dark</item>
+        <item name="itemIconTint">@color/bottom_nav_item_color</item>
+        <item name="itemTextColor">@color/bottom_nav_item_color</item>
+        <item name="itemRippleColor">@color/accent_green</item>
+        <item name="elevation">8dp</item>
+    </style>
+
+    <!-- AI Performance Indicators -->
+    <style name="Widget.SomniAI.LinearProgressIndicator" parent="Widget.Material3.LinearProgressIndicator">
+        <item name="indicatorColor">@color/ai_primary</item>
+        <item name="trackColor">@color/ai_track</item>
+        <item name="trackThickness">6dp</item>
+        <!--<item name="indicatorCornerRadius">3dp</item> -->
+        <item name="trackCornerRadius">3dp</item>
+    </style>
+
+    <style name="Widget.SomniAI.LinearProgressIndicator.Confidence" parent="Widget.SomniAI.LinearProgressIndicator">
+        <item name="trackThickness">4dp</item>
+        <!--<item name="indicatorCornerRadius">2dp</item> -->
+        <item name="trackCornerRadius">2dp</item>
+    </style>
+
+    <!-- AI Slider Styles -->
+    <style name="Widget.SomniAI.Slider" parent="Widget.Material3.Slider">
+        <!--<item name="activeTrackColor">@color/ai_primary</item> -
+        <item name="inactiveTrackColor">@color/ai_track</item> -->
+        <item name="thumbColor">@color/ai_primary</item>
+        <item name="trackHeight">6dp</item>
+        <item name="thumbRadius">12dp</item>
+    </style>
+
+    <style name="Widget.SomniAI.Slider.Personalization" parent="Widget.SomniAI.Slider">
+        <!--<item name="activeTrackColor">@color/personalization_color</item> -->
+        <item name="thumbColor">@color/personalization_color</item>
+    </style>
+
+    <!-- AI Toggle Button Group -->
+    <style name="Widget.SomniAI.MaterialButtonToggleGroup" parent="Widget.Material3.MaterialButtonToggleGroup">
+        <item name="materialButtonToggleGroupStyle">@style/Widget.SomniAI.MaterialButtonToggleGroup.AI</item>
+    </style>
+
+    <style name="Widget.SomniAI.MaterialButtonToggleGroup.AI" parent="Widget.Material3.MaterialButtonToggleGroup">
+        <item name="checkedButton">@string/ai_model_auto</item>
+        <item name="singleSelection">true</item>
+        <item name="android:background">@color/ai_toggle_background</item>
+    </style>
+
+    <!-- Insights List Styles -->
+    <style name="Widget.SomniAI.RecyclerView.Insights" parent="android:Widget">
+        <item name="android:scrollbars">vertical</item>
+        <item name="android:fadingEdge">vertical</item>
+        <item name="android:fadingEdgeLength">16dp</item>
+        <item name="android:clipToPadding">false</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">80dp</item>
+    </style>
+
+    <!-- AI Status Indicator -->
+    <style name="Widget.SomniAI.Badge" parent="Widget.Material3.Badge">
+        <item name="backgroundColor">@color/ai_primary</item>
+        <item name="badgeTextColor">@color/white</item>
+        <item name="badgeRadius">8dp</item>
+    </style>
+
+    <style name="Widget.SomniAI.Badge.Confidence" parent="Widget.SomniAI.Badge">
+        <item name="badgeRadius">6dp</item>
+    </style>
+
+    <!-- AI Divider Styles -->
+    <style name="Widget.SomniAI.Divider.Insights" parent="Widget.Material3.MaterialDivider">
+        <item name="dividerColor">@color/insight_divider_color</item>
+        <item name="dividerThickness">1dp</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+    </style>
+
+</resources>

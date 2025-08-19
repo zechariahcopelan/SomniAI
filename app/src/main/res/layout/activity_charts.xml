@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- Minimal placeholders for required IDs -->
+    <View android:id="@+id/toolbar" android:layout_width="0dp" android:layout_height="0dp" />
+    <View android:id="@+id/chartTabLayout" android:layout_width="0dp" android:layout_height="0dp" />
+    <View android:id="@+id/rangeFilterGroup" android:layout_width="0dp" android:layout_height="0dp" />
+    <View android:id="@+id/range7Days" android:layout_width="0dp" android:layout_height="0dp" />
+    <View android:id="@+id/range30Days" android:layout_width="0dp" android:layout_height="0dp" />
+    <View android:id="@+id/range90Days" android:layout_width="0dp" android:layout_height="0dp" />
+    <View android:id="@+id/durationLineChart" android:layout_width="0dp" android:layout_height="0dp" />
+    <View android:id="@+id/qualityBarChart" android:layout_width="0dp" android:layout_height="0dp" />
+    <View android:id="@+id/movementLineChart" android:layout_width="0dp" android:layout_height="0dp" />
+    <View android:id="@+id/phaseDistributionPieChart" android:layout_width="0dp" android:layout_height="0dp" />
+    <View android:id="@+id/efficiencyLineChart" android:layout_width="0dp" android:layout_height="0dp" />
+    <View android:id="@+id/weeklyBarChart" android:layout_width="0dp" android:layout_height="0dp" />
+    <View android:id="@+id/chartTitle" android:layout_width="0dp" android:layout_height="0dp" />
+    <View android:id="@+id/chartDescription" android:layout_width="0dp" android:layout_height="0dp" />
+    <View android:id="@+id/loadingIndicator" android:layout_width="0dp" android:layout_height="0dp" />
+    <View android:id="@+id/chartsContainer" android:layout_width="0dp" android:layout_height="0dp" />
+    <View android:id="@+id/emptyStateLayout" android:layout_width="0dp" android:layout_height="0dp" />
+    <View android:id="@+id/emptyStateText" android:layout_width="0dp" android:layout_height="0dp" />
+    <View android:id="@+id/chartValueInfo" android:layout_width="0dp" android:layout_height="0dp" />
+
+    <!-- Your actual visible content -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Charts Activity - Under Construction"
+        android:gravity="center" />
+
+</LinearLayout>

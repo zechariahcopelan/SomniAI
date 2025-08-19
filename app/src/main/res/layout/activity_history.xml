@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- Minimal placeholders for required IDs -->
+    <View android:id="@+id/toolbar" android:layout_width="0dp" android:layout_height="0dp" />
+    <View android:id="@+id/sessionsRecyclerView" android:layout_width="0dp" android:layout_height="0dp" />
+    <View android:id="@+id/filterChipGroup" android:layout_width="0dp" android:layout_height="0dp" />
+    <View android:id="@+id/dateRangeChip" android:layout_width="0dp" android:layout_height="0dp" />
+    <View android:id="@+id/clearFiltersButton" android:layout_width="0dp" android:layout_height="0dp" />
+    <View android:id="@+id/searchView" android:layout_width="0dp" android:layout_height="0dp" />
+    <View android:id="@+id/swipeRefreshLayout" android:layout_width="0dp" android:layout_height="0dp" />
+    <View android:id="@+id/loadingIndicator" android:layout_width="0dp" android:layout_height="0dp" />
+    <View android:id="@+id/emptyStateLayout" android:layout_width="0dp" android:layout_height="0dp" />
+    <View android:id="@+id/emptyStateText" android:layout_width="0dp" android:layout_height="0dp" />
+    <View android:id="@+id/startTrackingButton" android:layout_width="0dp" android:layout_height="0dp" />
+    <View android:id="@+id/resultsInfoText" android:layout_width="0dp" android:layout_height="0dp" />
+    <View android:id="@+id/statisticsLayout" android:layout_width="0dp" android:layout_height="0dp" />
+    <View android:id="@+id/totalSessionsText" android:layout_width="0dp" android:layout_height="0dp" />
+    <View android:id="@+id/totalSleepTimeText" android:layout_width="0dp" android:layout_height="0dp" />
+    <View android:id="@+id/averageQualityText" android:layout_width="0dp" android:layout_height="0dp" />
+    <View android:id="@+id/bestStreakText" android:layout_width="0dp" android:layout_height="0dp" />
+
+    <!-- Your actual visible content -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="History Activity - Under Construction"
+        android:gravity="center" />
+
+</LinearLayout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<font-family xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Bold Roboto font (system default) -->
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="700" />
+
+</font-family>

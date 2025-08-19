@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Colors -->
+    <color name="primary_color">#4CAF50</color> <!-- ADDED: Missing primary_color -->
+    <color name="primary_dark">#1A1A1A</color>
+    <color name="primary_light">#2A2A2A</color>
+    <color name="background_dark">#121212</color>
+    <color name="surface_primary">#1E1E1E</color>
+    <color name="primary_variant">#3700B3</color>
+    <color name="surface_variant">#424242</color>
+    <color name="on_surface">#FFFFFF</color>
+    <color name="outline">#79747E</color>
+    <color name="outline_variant">#49454F</color>
+
+    <!-- Accent Colors -->
+    <color name="accent_red">#FF5722</color>
+    <color name="accent_green">#4CAF50</color>
+    <color name="accent_blue">#2196F3</color>
+    <color name="accent_amber">#FF9800</color>
+
+    <!-- Text Colors -->
+    <color name="white">#FFFFFF</color>
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#B3FFFFFF</color>
+    <color name="text_tertiary">#99FFFFFF</color>
+
+    <!-- Status Colors -->
+    <color name="error">#F44336</color>
+    <color name="warning">#FF9800</color>
+    <color name="success">#4CAF50</color>
+    <color name="status_active">#4CAF50</color>
+    <color name="status_inactive">#9E9E9E</color>
+    <color name="status_error">#F44336</color>
+    <color name="status_warning">#FF9800</color>
+    <color name="status_success">#4CAF50</color>
+
+    <!-- Sensor status colors -->
+    <color name="sensor_active">#4CAF50</color>
+    <color name="sensor_inactive">#FF5722</color>
+    <color name="sensor_warning">#FF9800</color>
+
+    <!-- ========== MISSING SESSION STATUS COLORS ========== -->
+    <color name="status_completed">#4CAF50</color> <!-- ADDED: Session completed status -->
+    <color name="status_ongoing">#FF9800</color> <!-- ADDED: Session ongoing status -->
+
+    <!-- Sleep Phase Colors -->
+    <color name="phase_awake">#F44336</color>
+    <color name="phase_light_sleep">#FF9800</color>
+    <color name="phase_deep_sleep">#2196F3</color>
+    <color name="phase_rem_sleep">#9C27B0</color>
+    <color name="phase_unknown">#9E9E9E</color>
+
+    <!-- Quality Colors -->
+    <color name="quality_excellent">#4CAF50</color>
+    <color name="quality_poor">#FF5722</color>
+    <color name="quality_very_good">#66BB6A</color>
+    <color name="quality_good">#8BC34A</color>
+    <color name="quality_fair">#FF9800</color>
+    <color name="quality_very_poor">#D32F2F</color>
+
+    <!-- Chart and graph colors -->
+    <color name="chart_line_primary">#03DAC6</color>
+    <color name="chart_line_secondary">#BB86FC</color>
+    <color name="chart_fill">#1A03DAC6</color>
+    <color name="chart_grid">#33FFFFFF</color>
+    <color name="chart_axis">#66FFFFFF</color>
+
+    <!-- ========== MISSING DURATION QUALITY COLORS ========== -->
+    <color name="duration_optimal">#4CAF50</color> <!-- ADDED: Optimal sleep duration -->
+    <color name="duration_good">#8BC34A</color> <!-- ADDED: Good sleep duration -->
+    <color name="duration_poor">#FF5722</color> <!-- ADDED: Poor sleep duration -->
+
+
+    <!-- Movement intensity colors -->
+    <color name="movement_very_low">#4CAF50</color>
+    <color name="movement_low">#8BC34A</color>
+    <color name="movement_medium">#FF9800</color>
+    <color name="movement_high">#FF5722</color>
+    <color name="movement_very_high">#D32F2F</color>
+
+
+    <!-- Noise level colors -->
+    <color name="noise_very_quiet">#4CAF50</color>
+    <color name="noise_quiet">#8BC34A</color>
+    <color name="noise_moderate">#FF9800</color>
+    <color name="noise_loud">#FF5722</color>
+    <color name="noise_very_loud">#D32F2F</color>
+
+    <!-- Emergency and alert colors -->
+    <color name="emergency_critical">#D32F2F</color>
+    <color name="emergency_high">#F57C00</color>
+    <color name="emergency_moderate">#FF9800</color>
+
+    <!-- ========== MISSING EFFICIENCY COLORS ========== -->
+    <color name="efficiency_excellent">#4CAF50</color> <!-- ADDED: Excellent efficiency -->
+    <color name="efficiency_good">#8BC34A</color> <!-- ADDED: Good efficiency -->
+    <color name="efficiency_fair">#FFC107</color> <!-- ADDED: Fair efficiency -->
+    <color name="efficiency_poor">#FF5722</color> <!-- ADDED: Poor efficiency -->
+
+    <!-- ========== MISSING CARD BACKGROUND COLORS ========== -->
+    <color name="session_card_background">#1E1E1E</color> <!-- ADDED: Session card background -->
+    <color name="session_card_selected_background">#2E2E2E</color> <!-- ADDED: Selected session card -->
+
+    <!-- ========== AI & INSIGHTS COLORS ========== -->
+
+    <!-- AI Primary Colors (Referenced in error log) -->
+    <color name="ai_primary">#00d4aa</color>
+    <color name="ai_primary_variant">#00b894</color>
+    <color name="ai_secondary">#74b9ff</color>
+    <color name="ai_background">#1e3d59</color>
+    <color name="ai_surface">#2f4f7f</color>
+    <color name="ai_model_color">#6c5ce7</color>
+    <color name="ai_track">#3d5a73</color>
+
+    <!-- AI Chip Colors -->
+    <color name="ai_chip_background">#2d3436</color>
+    <color name="ai_chip_stroke">#00d4aa</color>
+
+    <!-- Confidence Level Colors (Referenced in error log) -->
+    <color name="confidence_high_background">#00b89420</color>
+    <color name="confidence_medium_background">#fdcb6e20</color>
+    <color name="confidence_low_background">#e1705520</color>
+    <color name="confidence_high">#4CAF50</color>
+    <color name="confidence_medium">#FF9800</color>
+    <color name="confidence_low">#FF5722</color>
+
+    <!-- Insight Category Colors -->
+    <color name="insight_category_chip_background">#636e72</color>
+    <color name="insight_category_chip_stroke">#ddd</color>
+
+    <!-- Insight Type Colors -->
+    <color name="insight_recommendation">#74b9ff</color>
+    <color name="insight_warning">#fdcb6e</color>
+    <color name="insight_critical">#e17055</color>
+    <color name="insight_success">#00b894</color>
+
+    <!-- Trend Colors -->
+    <color name="trend_improving">#4CAF50</color>
+    <color name="trend_stable">#2196F3</color>
+    <color name="trend_declining">#FF5722</color>
+
+    <!-- Processing State Colors -->
+    <color name="ai_processing">#6c5ce7</color>
+    <color name="ai_loading">#a29bfe</color>
+    <color name="ai_complete">#00b894</color>
+    <color name="ai_error">#e17055</color>
+
+    <!-- Priority Colors -->
+    <color name="priority_critical">#D32F2F</color>
+    <color name="priority_high">#F57C00</color>
+    <color name="priority_medium">#1976D2</color>
+    <color name="priority_low">#388E3C</color>
+    <color name="priority_urgent">#E91E63</color>
+
+    <!-- Navigation Colors -->
+    <color name="bottom_nav_selected">#4CAF50</color>
+    <color name="bottom_nav_unselected">#B3FFFFFF</color>
+
+    <!-- Card Background Variants -->
+    <color name="card_insight">#263238</color>
+    <color name="card_recommendation">#37474F</color>
+    <color name="card_warning">#4a3c1d</color>
+    <color name="card_success">#1e4d3b</color>
+
+    <!-- Data integrity colors -->
+    <color name="data_excellent">#4CAF50</color>
+    <color name="data_good">#8BC34A</color>
+    <color name="data_fair">#FF9800</color>
+    <color name="data_poor">#FF5722</color>
+
+    <!-- Performance indicator colors -->
+    <color name="performance_excellent">#4CAF50</color>
+    <color name="performance_good">#8BC34A</color>
+    <color name="performance_warning">#FF9800</color>
+    <color name="performance_critical">#FF5722</color>
+
+    <!-- Overlay Colors -->
+    <color name="overlay_dark">#80000000</color>
+    <color name="overlay_light">#40FFFFFF</color>
+
+    <!-- Border Colors -->
+    <color name="border_primary">#3E3E3E</color>
+    <color name="border_secondary">#2E2E2E</color>
+    <color name="border_accent">#4CAF50</color>
+
+    <!-- ========== MISSING INSIGHT BACKGROUND COLORS ========== -->
+
+    <!-- Insight Card Backgrounds -->
+    <color name="insight_premium_background">#2d3436</color>
+    <color name="insight_premium_accent">#00d4aa</color>
+    <color name="insight_recommendation_background">#2e4057</color>
+    <color name="insight_warning_background">#4a3c1d</color>
+    <color name="insight_positive_background">#1e4d3b</color>
+    <color name="insight_positive_accent">#00b894</color>
+    <color name="ai_processing_background">#1e3d59</color>
+    <color name="ai_processing_accent">#6c5ce7</color>
+
+    <!-- ========== MISSING TEXT COLORS ========== -->
+
+    <!-- Insight Text Colors -->
+    <color name="insight_title_color">#FFFFFF</color>
+    <color name="insight_description_color">#E0E0E0</color>
+    <color name="insight_recommendation_color">#FFD54F</color>
+    <color name="insight_category_color">#90CAF9</color>
+    <color name="ai_status_color">#00d4aa</color>
+    <color name="personalization_color">#9C27B0</color>
+    <color name="personalization_progress_color">#BA68C8</color>
+
+    <!-- ========== MISSING DIALOG & SHEET COLORS ========== -->
+
+    <!-- Dialog and Bottom Sheet Backgrounds -->
+    <color name="insights_bottom_sheet_background">#1E1E1E</color>
+    <color name="ai_dialog_background">#2d3436</color>
+    <color name="insight_action_accent">#00d4aa</color>
+    <color name="insight_divider_color">#424242</color>
+    <color name="ai_toggle_background">#1E1E1E</color>
+
+    <!-- System Colors (Keep for compatibility) -->
+    <color name="black">#FF000000</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+</resources>

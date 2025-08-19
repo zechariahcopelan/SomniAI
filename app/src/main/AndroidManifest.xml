@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- ========== PERMISSIONS ========== -->
+
+    <!-- Required for accelerometer sensor access -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!-- Required for microphone access to detect noise levels -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <!-- Required for foreground service notifications -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MICROPHONE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_HEALTH" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+
+    <!-- Required for wake lock to keep tracking active -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!-- Required for notification display -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <!-- Required for file export functionality -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+
+    <!-- Required for scoped storage (Android 10+) -->
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+
+    <!-- ========== ENHANCED NETWORKING PERMISSIONS ========== -->
+
+    <!-- Core networking permissions -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+
+    <!-- Background network access -->
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+
+    <!-- Network security and TLS -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+
+    <!-- Real-time data synchronization -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <!-- Download manager for large file transfers -->
+    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
+
+    <!-- Optional: Battery optimization exemption for consistent tracking -->
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+
+    <!-- Biometric authentication for secure API access -->
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+
+    <!-- ========== HARDWARE FEATURES ========== -->
+
+    <!-- Required hardware features -->
+    <uses-feature
+        android:name="android.hardware.sensor.accelerometer"
+        android:required="true" />
+
+    <uses-feature
+        android:name="android.hardware.microphone"
+        android:required="true" />
+
+    <!-- Optional hardware features -->
+    <uses-feature
+        android:name="android.hardware.sensor.gyroscope"
+        android:required="false" />
+
+    <uses-feature
+        android:name="android.hardware.sensor.heartrate"
+        android:required="false" />
+
+    <!-- Network-related hardware features -->
+    <uses-feature
+        android:name="android.hardware.wifi"
+        android:required="false" />
+
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+
+    <!-- Biometric hardware -->
+    <uses-feature
+        android:name="android.hardware.fingerprint"
+        android:required="false" />
+
+    <uses-feature
+        android:name="android.hardware.biometrics"
+        android:required="false" />
+
+    <!-- ========== APPLICATION ========== -->
+
+    <application
+        android:name=".SomniAIApplication"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.SomniAI"
+        android:hardwareAccelerated="true"
+        android:largeHeap="true"
+        android:usesCleartextTraffic="false"
+
+        tools:targetApi="31">
+        <!--android:networkSecurityConfig="@xml/network_security_config" -->
+        <!-- ========== ACTIVITIES ========== -->
+
+        <!-- Main Activity - App entry point -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.SomniAI.NoActionBar"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <!-- Handle app shortcuts
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts" /> -->
+        </activity>
+
+        <!-- Charts Activity - Data visualization -->
+        <activity
+            android:name=".activities.ChartsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.SomniAI"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+
+        <!-- History Activity - Session history -->
+        <activity
+            android:name=".activities.HistoryActivity"
+            android:exported="false"
+            android:theme="@style/Theme.SomniAI"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+
+        <!-- Settings Activity - App configuration -->
+        <activity
+            android:name=".activities.SettingsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.SomniAI"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+
+        <!-- Session Details Activity - Individual session view -->
+        <activity
+            android:name=".activities.SessionDetailsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.SomniAI"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".activities.HistoryActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.HistoryActivity" />
+        </activity>
+
+        <!-- Onboarding Activity - First-time user setup -->
+        <activity
+            android:name=".activities.OnboardingActivity"
+            android:exported="false"
+            android:theme="@style/Theme.SomniAI.NoActionBar"
+            android:screenOrientation="portrait"
+            android:noHistory="true" />
+
+        <!-- About Activity - App information -->
+        <activity
+            android:name=".activities.AboutActivity"
+            android:exported="false"
+            android:theme="@style/Theme.SomniAI"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".activities.SettingsActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.SettingsActivity" />
+        </activity>
+
+        <!-- Export Activity - Data export functionality -->
+        <activity
+            android:name=".activities.ExportActivity"
+            android:exported="false"
+            android:theme="@style/Theme.SomniAI"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".activities.SettingsActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.SettingsActivity" />
+        </activity>
+
+        <!-- ========== ENHANCED SERVICES ========== -->
+
+        <!-- Sleep Tracking Service - Core tracking functionality -->
+        <service
+            android:name=".service.SleepTrackingService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="microphone|health"
+            android:stopWithTask="false">
+        </service>
+
+        <!-- Data Sync Service - Background data synchronization -->
+        <service
+            android:name=".service.DataSyncService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="dataSync">
+        </service>
+
+        <!-- Analytics Processing Service - Background analytics -->
+        <service
+            android:name=".service.AnalyticsService"
+            android:enabled="true"
+            android:exported="false">
+        </service>
+
+        <!-- Network Monitoring Service - Monitor connectivity -->
+        <service
+            android:name=".service.NetworkMonitoringService"
+            android:enabled="true"
+            android:exported="false">
+        </service>
+
+        <!-- API Service - Handle REST API communications -->
+        <service
+            android:name=".service.ApiService"
+            android:enabled="true"
+            android:exported="false">
+        </service>
+
+        <!-- Real-time Sync Service - WebSocket connections -->
+        <service
+            android:name=".service.RealTimeSyncService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="dataSync">
+        </service>
+
+        <!-- ========== ENHANCED BROADCAST RECEIVERS ========== -->
+
+        <!-- Boot Receiver - Handle device restart -->
+        <receiver
+            android:name=".receiver.BootReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter android:priority="1000">
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Sleep Tracking Receiver - Handle tracking events -->
+        <receiver
+            android:name=".receiver.SleepTrackingReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.example.somniai.action.START_TRACKING" />
+                <action android:name="com.example.somniai.action.STOP_TRACKING" />
+                <action android:name="com.example.somniai.action.PAUSE_TRACKING" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Network State Receiver - Handle connectivity changes -->
+        <receiver
+            android:name=".receiver.NetworkStateReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
+                <action android:name="android.net.wifi.STATE_CHANGE" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Battery Optimization Receiver - Handle power management -->
+        <receiver
+            android:name=".receiver.BatteryOptimizationReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BATTERY_OKAY" />
+                <action android:name="android.intent.action.BATTERY_LOW" />
+                <action android:name="android.os.action.POWER_SAVE_MODE_CHANGED" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Sync Status Receiver - Handle sync completion -->
+        <receiver
+            android:name=".receiver.SyncStatusReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.example.somniai.action.SYNC_COMPLETE" />
+                <action android:name="com.example.somniai.action.SYNC_FAILED" />
+            </intent-filter>
+        </receiver>
+
+        <!-- ========== CONTENT PROVIDERS ========== -->
+
+        <!-- Sleep Data Provider - Share data with other apps (optional) -->
+        <provider
+            android:name=".provider.SleepDataProvider"
+            android:authorities="com.example.somniai.provider.sleepdata"
+            android:enabled="true"
+            android:exported="false"
+            android:grantUriPermissions="true">
+        </provider>
+
+        <!-- File Provider - Share exported files -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.somniai.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <!--<meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" /> -->
+        </provider>
+
+        <!-- ========== WORK MANAGER ========== -->
+
+        <!-- Work Manager initialization -->
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="com.example.somniai.androidx-startup"
+            android:exported="false"
+            tools:replace="android:authorities">
+            <meta-data
+                android:name="androidx.work.WorkManagerInitializer"
+                android:value="androidx.startup"
+                tools:node="remove" />
+        </provider>
+
+        <!-- ========== APP CONFIGURATION METADATA ========== -->
+
+        <!-- Network security configuration
+        <meta-data
+            android:name="android.security.net.config"
+            android:resource="@xml/network_security_config" /> -->
+
+        <!-- API configuration
+        <meta-data
+            android:name="com.example.somniai.api.base_url"
+            android:value="@string/api_base_url" /> -->
+
+        <meta-data
+            android:name="com.example.somniai.api.timeout"
+            android:value="30000" />
+
+        <!-- WebSocket configuration
+        <meta-data
+            android:name="com.example.somniai.websocket.url"
+            android:value="@string/websocket_url" /> -->
+
+        <!-- Sync configuration -->
+        <meta-data
+            android:name="com.example.somniai.sync.interval"
+            android:value="900000" /> <!-- 15 minutes -->
+
+        <!-- ========== NOTIFICATION CHANNELS ========== -->
+
+        <!-- Notification metadata -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:icon="@android:drawable/ic_dialog_info" />
+            <!--android:resource="@drawable/ic_notification" /> -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/accent_green" />
+
+        <!-- ========== APP SHORTCUTS ========== -->
+
+        <!-- App shortcuts metadata -->
+        <meta-data
+            android:name="android.max_aspect"
+            android:value="2.1" />
+
+        <!-- ========== ADAPTIVE ICON ========== -->
+
+        <!-- Adaptive icon metadata -->
+        <meta-data
+            android:name="android.app.icon"
+            android:resource="@mipmap/ic_launcher" />
+
+        <!-- ========== MACHINE LEARNING ========== -->
+
+        <!-- TensorFlow Lite metadata -->
+        <meta-data
+            android:name="com.google.mlkit.vision.DEPENDENCIES"
+            android:value="ica,face" />
+
+        <!-- ========== BACKUP & SYNC ========== -->
+
+        <!-- Auto backup configuration
+        <meta-data
+            android:name="com.google.android.backup.api_key"
+            android:value="@string/backup_api_key" /> -->
+
+    </application>
+
+    <!-- ========== ENHANCED QUERIES (for Android 11+) ========== -->
+
+    <queries>
+        <!-- Query for health and fitness apps -->
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.HEALTH" />
+        </intent>
+
+        <!-- Query for sharing data -->
+        <intent>
+            <action android:name="android.intent.action.SEND" />
+            <data android:mimeType="*/*" />
+        </intent>
+
+        <!-- Query for opening files -->
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:mimeType="*/*" />
+        </intent>
+
+        <!-- Query for network-related intents -->
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="https" />
+        </intent>
+
+        <!-- Query for download manager -->
+        <intent>
+            <action android:name="android.intent.action.DOWNLOAD_COMPLETE" />
+        </intent>
+
+        <!-- Query for web browsers -->
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.BROWSABLE" />
+            <data android:scheme="https" />
+        </intent>
+
+        <!-- Query for email clients -->
+        <intent>
+            <action android:name="android.intent.action.SENDTO" />
+            <data android:scheme="mailto" />
+        </intent>
+
+        <!-- Query for backup and sync -->
+        <intent>
+            <action android:name="android.intent.action.SYNC" />
+        </intent>
+    </queries>
+
+</manifest>

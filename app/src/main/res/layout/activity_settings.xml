@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <!-- Minimal placeholders for required IDs -->
+    <View android:id="@+id/toolbar" android:layout_width="0dp" android:layout_height="0dp" />
+    <View android:id="@+id/movementSensitivitySlider" android:layout_width="0dp" android:layout_height="0dp" />
+    <View android:id="@+id/audioThresholdSlider" android:layout_width="0dp" android:layout_height="0dp" />
+    <View android:id="@+id/calibrateSensorsButton" android:layout_width="0dp" android:layout_height="0dp" />
+    <View android:id="@+id/testSensorsButton" android:layout_width="0dp" android:layout_height="0dp" />
+    <View android:id="@+id/movementSensitivityLabel" android:layout_width="0dp" android:layout_height="0dp" />
+    <View android:id="@+id/audioThresholdLabel" android:layout_width="0dp" android:layout_height="0dp" />
+    <View android:id="@+id/targetSleepSlider" android:layout_width="0dp" android:layout_height="0dp" />
+    <View android:id="@+id/setBedtimeButton" android:layout_width="0dp" android:layout_height="0dp" />
+    <View android:id="@+id/setWakeTimeButton" android:layout_width="0dp" android:layout_height="0dp" />
+    <View android:id="@+id/sleepGoalsSwitch" android:layout_width="0dp" android:layout_height="0dp" />
+    <View android:id="@+id/sleepGoalsOptions" android:layout_width="0dp" android:layout_height="0dp" />
+    <View android:id="@+id/targetSleepLabel" android:layout_width="0dp" android:layout_height="0dp" />
+    <View android:id="@+id/bedtimeLabel" android:layout_width="0dp" android:layout_height="0dp" />
+    <View android:id="@+id/wakeTimeLabel" android:layout_width="0dp" android:layout_height="0dp" />
+    <View android:id="@+id/exportDataButton" android:layout_width="0dp" android:layout_height="0dp" />
+    <View android:id="@+id/clearDataButton" android:layout_width="0dp" android:layout_height="0dp" />
+    <View android:id="@+id/dataRetentionSpinner" android:layout_width="0dp" android:layout_height="0dp" />
+    <View android:id="@+id/bedtimeReminderSwitch" android:layout_width="0dp" android:layout_height="0dp" />
+
+    <!-- Your actual visible content -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Settings Activity - Under Construction"
+        android:gravity="center"
+        android:textColor="@color/text_primary"
+        android:textSize="18sp" />
+
+</LinearLayout>
