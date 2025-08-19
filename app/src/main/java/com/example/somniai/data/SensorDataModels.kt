@@ -3,6 +3,8 @@ package com.example.somniai.data
 import android.hardware.SensorManager
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
+import com.example.somniai.data.*
+import com.example.somniai.data.InsightCategory
 
 /**
  * Sleep phase indicators based on movement and noise patterns
@@ -292,12 +294,14 @@ data class SleepSession(
     val startTime: Long,
     val endTime: Long? = null,
     val totalDuration: Long = 0,
+    val sessionDuration: Long = 0L,
     val sleepLatency: Long = 0,        // Time to fall asleep
     val awakeDuration: Long = 0,       // Time spent awake during session
     val lightSleepDuration: Long = 0,
     val deepSleepDuration: Long = 0,
     val remSleepDuration: Long = 0,
     val sleepEfficiency: Float = 0f,   // Percentage of time actually sleeping
+    val confidence: Float = 0.0f,
     val movementEvents: List<MovementEvent> = emptyList(),
     val noiseEvents: List<NoiseEvent> = emptyList(),
     val phaseTransitions: List<PhaseTransition> = emptyList(),
@@ -433,20 +437,7 @@ data class SleepAnalytics(
 /**
  * Sleep trend indicators
  */
-enum class SleepTrend {
-    IMPROVING,
-    STABLE,
-    DECLINING,
-    INSUFFICIENT_DATA;
 
-    fun getDisplayName(): String {
-        return when (this) {
-            IMPROVING -> "Improving"
-            STABLE -> "Stable"
-            DECLINING -> "Declining"
-            INSUFFICIENT_DATA -> "Not Enough Data"
-        }
-    }
 
     fun getColor(): String {
         return when (this) {
@@ -461,24 +452,7 @@ enum class SleepTrend {
 /**
  * Sleep insight categories for AI recommendations
  */
-enum class InsightCategory {
-    DURATION,
-    QUALITY,
-    CONSISTENCY,
-    ENVIRONMENT,
-    MOVEMENT,
-    GENERAL;
 
-    fun getDisplayName(): String {
-        return when (this) {
-            DURATION -> "Sleep Duration"
-            QUALITY -> "Sleep Quality"
-            CONSISTENCY -> "Sleep Schedule"
-            ENVIRONMENT -> "Sleep Environment"
-            MOVEMENT -> "Sleep Movement"
-            GENERAL -> "General"
-        }
-    }
 }
 
 /**

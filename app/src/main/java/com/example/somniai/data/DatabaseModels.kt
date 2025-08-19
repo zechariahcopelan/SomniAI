@@ -5,6 +5,7 @@ import androidx.room.Embedded
 import com.example.somniai.database.*
 import java.util.Date
 import com.example.somniai.ui.theme.SleepPhase
+import com.example.somniai.data.InsightCategory
 
 /**
  * Enhanced database models for data transfer, aggregation, and mapping
@@ -25,9 +26,6 @@ import com.example.somniai.ui.theme.SleepPhase
 
 // ========== MISSING ENUM FOR INSIGHT DATA ==========
 
-enum class InsightCategory {
-    DURATION, QUALITY, MOVEMENT, NOISE, TIMING, PATTERN, HEALTH, ENVIRONMENT
-}
 
 data class SessionSummaryDTO(
     @ColumnInfo(name = "id")

@@ -3,6 +3,10 @@ package com.example.somniai.database
 import androidx.room.*
 import com.example.somniai.data.*
 import java.util.Date
+import com.example.somniai.data.SleepSession
+import kotlinx.parcelize.Parcelize
+import android.os.Parcelable
+import com.example.somniai.data.SleepPhase
 
 
 
@@ -309,21 +313,22 @@ data class SleepInsightEntity(
     @ColumnInfo(name = "created_at")
     val createdAt: Date = Date()
 ) {
-    fun toDomainModel(): SleepInsight {
-        return SleepInsight(
-            id = id,
-            sessionId = sessionId,
-            category = category,
-            title = title,
-            description = description,
-            recommendation = recommendation,
-            priority = priority,
-            timestamp = timestamp,
-            isAiGenerated = isAiGenerated,
-            isAcknowledged = isAcknowledged
-        )
+    @Parcelize
+    data class SleepInsight(
+        val id: String,                              // Keep as String or change to Long if needed
+        val sessionId: Long,
+        val category: InsightCategory,               // Keep existing type
+        val title: String,
+        val description: String,
+        val recommendation: String,
+        val priority: Int,
+        val timestamp: Long = System.currentTimeMillis(),
+        val isAiGenerated: Boolean = false,
+        val isAcknowledged: Boolean = false,
+        val confidence: Float = 0f                  // Keep if already there
+    ) : Parcelable
     }
-}
+
 
 /**
  * AI Generation Job tracking entity
@@ -1341,87 +1346,3 @@ object AIEntityHelper {
         )
     }
 }
-
-data class SleepSession(
-    val id: Long,
-    val startTime: Long,
-    val endTime: Long?,
-    val totalDuration: Long,
-    val sessionDuration: Long,  // NEW PROPERTY
-    val sleepLatency: Long,
-    val awakeDuration: Long,
-    val lightSleepDuration: Long,
-    val deepSleepDuration: Long,
-    val remSleepDuration: Long,
-    val sleepEfficiency: Float,
-    val confidence: Float,  // NEW PROPERTY
-    val movementEvents: List<MovementEvent>,
-    val noiseEvents: List<NoiseEvent>,
-    val phaseTransitions: List<PhaseTransition>,
-    val sleepQualityScore: Float?,
-    val qualityFactors: SleepQualityFactors?,
-    val averageMovementIntensity: Float,
-    val averageNoiseLevel: Float,
-    val movementFrequency: Float,
-    val notes: String,
-    val settings: SensorSettings?
-)
-
-/**
- * Domain model for movement event
- */
-data class MovementEvent(
-    val id: Long,
-    val sessionId: Long,
-    val timestamp: Long,
-    val intensity: Float,
-    val x: Float,
-    val y: Float,
-    val z: Float
-)
-
-/**
- * Domain model for noise event
- */
-data class NoiseEvent(
-    val id: Long,
-    val sessionId: Long,
-    val timestamp: Long,
-    val decibelLevel: Float,
-    val amplitude: Int
-)
-
-/**
- * Domain model for phase transition
- */
-data class PhaseTransition(
-    val timestamp: Long,
-    val fromPhase: SleepPhase,
-    val toPhase: SleepPhase,
-    val confidence: Float
-)
-
-/**
- * Domain model for sleep quality factors
- */
-data class SleepQualityFactors(
-    val movementScore: Float,
-    val noiseScore: Float,
-    val durationScore: Float,
-    val consistencyScore: Float,
-    val overallScore: Float
-)
-
-/**
- * Domain model for sensor settings
- */
-data class SensorSettings(
-    val movementThreshold: Float,
-    val noiseThreshold: Int,
-    val movementSamplingRate: Int,
-    val noiseSamplingInterval: Long,
-    val enableMovementDetection: Boolean,
-    val enableNoiseDetection: Boolean,
-    val enableSmartFiltering: Boolean,
-    val autoAdjustSensitivity: Boolean
-)

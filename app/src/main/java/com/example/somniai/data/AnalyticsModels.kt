@@ -114,7 +114,10 @@ data class SleepInsight(
     val category: String,
     val priority: Int,
     val confidence: Float,
-    val timestamp: Long = System.currentTimeMillis()
+    val timestamp: Long = System.currentTimeMillis(),
+    val isAcknowledged: Boolean = false,        // ADD THIS LINE
+    val sessionId: Long = 0L,                   // ADD THIS LINE (probably needed too)
+    val isAiGenerated: Boolean = false
 ) : Parcelable
 
 
@@ -1826,9 +1829,7 @@ enum class InsightCategory(val displayName: String) {
 }
 
 // ========== ADDITIONAL SUPPORTING CLASSES ==========
-// Enhanced analysis components
-@Parcelize data class DurationAnalysis(val score: Float = 0f, val insights: List<String> = emptyList(), val durationScore: Float = score) : Parcelable
-// ... rest of your existing supporting classes ...
+
 
 // ========== ADDITIONAL SUPPORTING CLASSES ==========
 
@@ -1891,7 +1892,7 @@ enum class InsightCategory(val displayName: String) {
 
 // Pattern detection components
 @Parcelize data class CyclicalBehavior(val pattern: String, val strength: Float) : Parcelable
-@Parcelize data class SeasonalComponent(val component: String, val strength: Float) : Parcelable
+data class SeasonalComponentData(val component: String, val strength: Float) : Parcelable
 @Parcelize data class CyclicComponent(val component: String, val frequency: Float) : Parcelable
 @Parcelize data class IrregularComponent(val component: String, val variance: Float) : Parcelable
 @Parcelize data class PatternCorrelation(val pattern1: String, val pattern2: String, val correlation: Float) : Parcelable

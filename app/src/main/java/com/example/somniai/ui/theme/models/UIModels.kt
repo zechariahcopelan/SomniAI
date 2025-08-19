@@ -16,6 +16,7 @@ import com.example.somniai.data.PhaseDistributionData
 import com.example.somniai.data.SleepInsight  // From AnalyticsModels.kt
 import com.example.somniai.ui.theme.SleepPhase
 import com.example.somniai.ui.theme.TrendDirection
+import com.example.somniai.data.InsightCategory
 
 
 /**
@@ -73,9 +74,6 @@ data class QualityFactorAnalysis(
 
 // ========== ENUMS ==========
 
-enum class InsightCategory {
-    QUALITY, DURATION, ENVIRONMENT, MOVEMENT, CONSISTENCY, PATTERN
-}
 
 enum class RecommendationCategory {
     ENVIRONMENT, BEHAVIOR, TIMING, HEALTH
