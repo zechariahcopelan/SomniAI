@@ -4,7 +4,7 @@ import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 import java.util.*
 import kotlin.math.*
-import com.example.somniai.data.SessionSummaryDTO
+import com.example.somniai.data.DataIntegrityStatus
 
 /**
  * Comprehensive analytics result models for sleep data analysis with AI integration
@@ -24,18 +24,231 @@ import com.example.somniai.data.SessionSummaryDTO
 // ========== ENHANCED AI INSIGHT RESULT MODELS ==========
 
 /**
- * Basic sleep session analytics for UI compatibility
+ * Enhanced SleepSessionAnalytics - Comprehensive analytics for individual sleep sessions
+ * Integrates with SomniAI's advanced AI and analytics capabilities
  */
 @Parcelize
 data class SleepSessionAnalytics(
+    // Core session identification
     val sessionId: Long,
     val sessionDuration: Long = 0L,
-    val actionableRecommendations: List<String> = emptyList(),
-    val confidence: Float = 0.0f,
+    val timestamp: Long = System.currentTimeMillis(),
+    val sessionType: SessionType = SessionType.AUTOMATIC,
+    val sessionStatus: SessionStatus = SessionStatus.COMPLETED,
+
+    // Primary quality metrics
     val qualityScore: Float = 0f,
     val efficiencyScore: Float = 0f,
-    val timestamp: Long = System.currentTimeMillis()
+    val consistencyScore: Float = 0f,
+    val overallRating: QualityGrade = QualityGrade.POOR,
+
+    // Detailed factor analysis
+    val qualityFactors: QualityFactorAnalysis? = null,
+    val movementScore: Float = 0f,
+    val noiseScore: Float = 0f,
+    val restlessnessLevel: Float = 0f,
+    val environmentalScore: Float = 0f,
+
+    // Sleep architecture and phases
+    val sleepPhases: List<SleepPhaseData> = emptyList(),
+    val deepSleepPercentage: Float = 0f,
+    val remSleepPercentage: Float = 0f,
+    val lightSleepPercentage: Float = 0f,
+    val awakePercentage: Float = 0f,
+    val phaseTransitions: Int = 0,
+
+    // Advanced sleep metrics
+    val sleepLatency: Long = 0L, // Time to fall asleep
+    val awakenings: Int = 0,
+    val awakeDuration: Long = 0L,
+    val movementCount: Int = 0,
+    val avgNoiseLevel: Float = 0f,
+    val maxNoiseLevel: Float = 0f,
+    val temperatureVariation: Float = 0f,
+
+    // AI-powered insights and recommendations
+    val aiInsights: List<ProcessedInsight> = emptyList(),
+    val aiGeneratedRecommendations: List<String> = emptyList(),
+    val actionableRecommendations: List<String> = emptyList(),
+    val aiConfidenceLevel: Float = 0f,
+    val anomaliesDetected: List<DetectedAnomaly> = emptyList(),
+    val patternRecognition: List<String> = emptyList(),
+
+    // Confidence and validation metrics
+    val confidence: Float = 0.0f,
+    val dataQuality: DataQualityMetrics = DataQualityMetrics(),
+    val dataCompleteness: Float = 1.0f,
+    val sensorReliability: Float = 1.0f,
+    val validationScore: Float = 0f,
+
+    // Comparative and trend analysis
+    val personalBest: Boolean = false,
+    val trendDirection: TrendDirection = TrendDirection.STABLE,
+    val improvementFromLastSession: Float = 0f,
+    val personalPercentile: Float = 50f,
+    val populationPercentile: Float = 50f,
+    val streakData: StreakAnalysis? = null,
+
+    // Behavioral and environmental context
+    val bedtimeConsistency: Float = 0f,
+    val waketimeConsistency: Float = 0f,
+    val weekdayPattern: Boolean = true,
+    val environmentalFactors: Map<String, Float> = emptyMap(),
+    val lifestyleFactors: List<String> = emptyList(),
+
+    // Goals and achievements
+    val goalProgress: Map<String, Float> = emptyMap(),
+    val achievementsUnlocked: List<String> = emptyList(),
+    val targetsMet: List<String> = emptyList(),
+    val improvementAreas: List<String> = emptyList(),
+
+    // Advanced analytics integration
+    val qualityReport: SleepQualityReport? = null,
+    val trendAnalysis: TrendAnalysisResult? = null,
+    val patternAnalysis: SleepPatternAnalysis? = null,
+    val comparativeAnalysis: ComparativeAnalysisResult? = null,
+
+    // Processing and metadata
+    val processingVersion: String = "1.0",
+    val processingTimeMs: Long = 0L,
+    val algorithmUsed: String = "SomniAI Advanced Analytics",
+    val modelVersion: String = "v1.0",
+    val calibrationApplied: Boolean = false,
+    val personalizationApplied: Boolean = false,
+
+    // Error handling and reliability
+    val processingErrors: List<String> = emptyList(),
+    val dataIntegrity: DataIntegrityStatus = DataIntegrityStatus.HEALTHY,
+    val confidenceInterval: ConfidenceInterval? = null,
+    val reliabilityIndicators: Map<String, Float> = emptyMap(),
+
+    // User interaction and feedback
+    val userFeedback: SessionUserFeedback? = null,
+    val manualAdjustments: List<String> = emptyList(),
+    val userRating: Float? = null,
+    val feedbackIncorporated: Boolean = false
+) : Parcelable {
+
+    // Computed properties for UI convenience
+    val formattedDuration: String
+        get() = formatDuration(sessionDuration)
+
+    val qualityDisplayText: String
+        get() = "${(qualityScore * 10).toInt()}/100 (${overallRating.displayName})"
+
+    val efficiencyDisplayText: String
+        get() = "${(efficiencyScore * 100).toInt()}%"
+
+    val isHighQuality: Boolean
+        get() = qualityScore >= 8.0f && confidence >= 0.7f
+
+    val hasAnomalies: Boolean
+        get() = anomaliesDetected.isNotEmpty()
+
+    val hasPersonalizedInsights: Boolean
+        get() = aiInsights.any { it.isPersonalized }
+
+    val actionableInsightCount: Int
+        get() = aiInsights.count { it.isActionable }
+
+    val criticalIssuesCount: Int
+        get() = anomaliesDetected.count { it.severity == AnomalySeverity.CRITICAL }
+
+    val dataReliabilityScore: Float
+        get() = (dataQuality.qualityScore + sensorReliability + dataCompleteness) / 3f
+
+    val sessionSummary: String
+        get() = "Sleep Quality: ${qualityDisplayText}, Duration: ${formattedDuration}, " +
+                "Efficiency: ${efficiencyDisplayText}"
+
+    // Analysis helpers
+    fun getTopInsights(count: Int = 3): List<ProcessedInsight> {
+        return aiInsights
+            .sortedWith(
+                compareByDescending<ProcessedInsight> { it.priority }
+                    .thenByDescending { it.qualityScore }
+            )
+            .take(count)
+    }
+
+    fun getTopRecommendations(count: Int = 5): List<String> {
+        return actionableRecommendations.take(count)
+    }
+
+    fun getSleepArchitectureSummary(): Map<String, Float> {
+        return mapOf(
+            "Deep Sleep" to deepSleepPercentage,
+            "REM Sleep" to remSleepPercentage,
+            "Light Sleep" to lightSleepPercentage,
+            "Awake" to awakePercentage
+        )
+    }
+
+    fun getQualityFactorBreakdown(): Map<String, Float> {
+        return qualityFactors?.let { factors ->
+            mapOf(
+                "Movement" to factors.movementFactor.score,
+                "Noise" to factors.noiseFactor.score,
+                "Duration" to factors.durationFactor.score,
+                "Consistency" to factors.consistencyFactor.score,
+                "Efficiency" to factors.efficiencyFactor.score,
+                "Timing" to factors.timingFactor.score
+            )
+        } ?: emptyMap()
+    }
+
+    fun hasSignificantFindings(): Boolean {
+        return isHighQuality || hasAnomalies || personalBest ||
+                improvementFromLastSession > 10f
+    }
+
+    private fun formatDuration(durationMs: Long): String {
+        val hours = durationMs / (1000 * 60 * 60)
+        val minutes = (durationMs % (1000 * 60 * 60)) / (1000 * 60)
+        return "${hours}h ${minutes}m"
+    }
+}
+
+// Supporting data classes for enhanced analytics
+
+@Parcelize
+data class SleepPhaseData(
+    val phase: SleepPhase,
+    val startTime: Long,
+    val endTime: Long,
+    val duration: Long,
+    val confidence: Float,
+    val quality: Float
 ) : Parcelable
+
+@Parcelize
+data class SessionUserFeedback(
+    val overallRating: Float,
+    val feltRested: Boolean,
+    val sleepQualityRating: Float,
+    val comments: String = "",
+    val wakeupMood: String = "",
+    val physicalFeelings: List<String> = emptyList(),
+    val submittedAt: Long = System.currentTimeMillis()
+) : Parcelable
+
+enum class SessionType(val displayName: String) {
+    AUTOMATIC("Automatic"),
+    MANUAL("Manual"),
+    SCHEDULED("Scheduled"),
+    NAP("Nap"),
+    RECOVERY("Recovery")
+}
+
+enum class SessionStatus(val displayName: String) {
+    ACTIVE("Active"),
+    COMPLETED("Completed"),
+    PAUSED("Paused"),
+    CANCELLED("Cancelled"),
+    ERROR("Error"),
+    PROCESSING("Processing")
+}
+
 
 /**
  * Comprehensive AI insight generation result with full metadata
@@ -62,7 +275,7 @@ data class AIInsightGenerationResult(
     val errorMessages: List<String> = emptyList(),
     val performanceMetrics: GenerationPerformanceMetrics,
     val dataSourcesUsed: List<String>,
-    val contextData: Map<String, Any> = emptyMap(),
+    val contextData: Map<String, String> = emptyMap(),
     val generatedAt: Long = System.currentTimeMillis()
 ) : Parcelable {
 
@@ -103,22 +316,7 @@ data class AIInsightGenerationResult(
 
 // ========== BASIC INSIGHT MODEL (for UI compatibility) ==========
 
-/**
- * Basic sleep insight for UI display (simplified version of ProcessedInsight)
- */
-@Parcelize
-data class SleepInsight(
-    val id: String,
-    val title: String,
-    val description: String,
-    val category: String,
-    val priority: Int,
-    val confidence: Float,
-    val timestamp: Long = System.currentTimeMillis(),
-    val isAcknowledged: Boolean = false,        // ADD THIS LINE
-    val sessionId: Long = 0L,                   // ADD THIS LINE (probably needed too)
-    val isAiGenerated: Boolean = false
-) : Parcelable
+
 
 
 /**
@@ -208,12 +406,6 @@ enum class EvidenceType {
     AI_PREDICTION
 }
 
-enum class DataIntegrityStatus {
-    EXCELLENT,
-    GOOD,
-    FAIR,
-    POOR
-}
 
 /**
  * Data point referenced in insight with visualization support
@@ -1892,7 +2084,7 @@ enum class InsightCategory(val displayName: String) {
 
 // Pattern detection components
 @Parcelize data class CyclicalBehavior(val pattern: String, val strength: Float) : Parcelable
-data class SeasonalComponentData(val component: String, val strength: Float) : Parcelable
+@Parcelize data class SeasonalComponentData(val component: String, val strength: Float) : Parcelable
 @Parcelize data class CyclicComponent(val component: String, val frequency: Float) : Parcelable
 @Parcelize data class IrregularComponent(val component: String, val variance: Float) : Parcelable
 @Parcelize data class PatternCorrelation(val pattern1: String, val pattern2: String, val correlation: Float) : Parcelable

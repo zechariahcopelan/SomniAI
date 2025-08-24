@@ -6,6 +6,15 @@ import kotlinx.parcelize.Parcelize
 import com.example.somniai.data.*
 import com.example.somniai.data.InsightCategory
 
+// Add this to SensorDataModels.kt after the existing enums:
+enum class DataIntegrityStatus {
+    HEALTHY,
+    WARNING,
+    CRITICAL,
+    UNKNOWN
+}
+
+
 /**
  * Sleep phase indicators based on movement and noise patterns
  */
@@ -36,6 +45,26 @@ enum class SleepPhase {
         }
     }
 }
+
+/**
+ * Sleep trend indicators
+
+enum class SleepTrend(val displayName: String) {
+    IMPROVING("Improving"),
+    STABLE("Stable"),
+    DECLINING("Declining"),
+    INSUFFICIENT_DATA("Insufficient Data");
+
+    fun getColor(): String {
+        return when (this) {
+            IMPROVING -> "#4CAF50"           // Green
+            STABLE -> "#2196F3"             // Blue
+            DECLINING -> "#FF5722"          // Red
+            INSUFFICIENT_DATA -> "#757575"   // Gray
+        }
+    }
+}*/
+
 
 /**
  * Movement event from accelerometer sensor
@@ -434,26 +463,6 @@ data class SleepAnalytics(
     }
 }
 
-/**
- * Sleep trend indicators
- */
-
-
-    fun getColor(): String {
-        return when (this) {
-            IMPROVING -> "#4CAF50"      // Green
-            STABLE -> "#2196F3"        // Blue
-            DECLINING -> "#FF5722"     // Red
-            INSUFFICIENT_DATA -> "#757575" // Gray
-        }
-    }
-}
-
-/**
- * Sleep insight categories for AI recommendations
- */
-
-}
 
 /**
  * AI-generated sleep insight
@@ -486,4 +495,39 @@ data class SleepInsight(
             else -> "#4CAF50" // Green
         }
     }
+
+    /**
+     * Simple quality factor analysis for basic analytics
+     */
+    @Parcelize
+    data class QualityFactorAnalysis(
+        val movementQuality: Float = 0.0f,
+        val noiseQuality: Float = 0.0f,
+        val durationQuality: Float = 0.0f,
+        val consistencyQuality: Float = 0.0f
+    ) : Parcelable
+
+    /**
+     * Daily trend data for charts and analytics
+     */
+    @Parcelize
+    data class DailyTrendData(
+        val date: String,
+        val qualityScore: Float,
+        val duration: Long,
+        val efficiency: Float
+    ) : Parcelable
+
+    /**
+     * Session summary for data transfer
+     */
+    @Parcelize
+    data class SessionSummaryDTO(
+        val id: Long,
+        val startTime: Long,
+        val endTime: Long,
+        val duration: Long,
+        val qualityScore: Float,
+        val efficiency: Float
+    ) : Parcelable
 }

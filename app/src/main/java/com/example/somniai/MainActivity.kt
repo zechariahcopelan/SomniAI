@@ -38,6 +38,11 @@ import kotlin.math.*
 import com.example.somniai.ui.theme.*
 import com.example.somniai.data.PerformanceMetrics
 import java.io.Serializable
+import com.example.somniai.data.DataIntegrityStatus
+import com.example.somniai.data.SleepPhase
+import com.example.somniai.data.SleepTrend
+import com.example.somniai.data.SleepSession
+import com.example.somniai.data.SleepAnalytics
 
 /**
  * Enhanced MainActivity with Advanced Analytics Integration
@@ -128,7 +133,7 @@ class MainActivity : AppCompatActivity() {
                 SleepTrackingService.BROADCAST_PHASE_CHANGE -> {
                     intent?.getParcelableExtra<PhaseTransition>(
                         SleepTrackingService.EXTRA_PHASE_TRANSITION
-                    ) as? PhaseTransition?.let { phaseTransition ->
+                    ) as? PhaseTransition?.let { phaseTransition: PhaseTransition ->
                         handleEnhancedPhaseChange(phaseTransition)
                     }
                 }

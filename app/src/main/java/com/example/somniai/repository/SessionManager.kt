@@ -1435,9 +1435,6 @@ data class InsightGenerationOptions(
     val personalizationLevel: PersonalizationLevel = PersonalizationLevel.ADAPTIVE
 )
 
-enum class PersonalizationLevel {
-    NONE, BASIC, ADAPTIVE, ADVANCED
-}
 
 // Keep all existing classes for compatibility
 sealed class SessionState {

@@ -20,7 +20,6 @@
     <string name="in_phase_for">In phase for %1$s</string>
     <string name="confidence_label">confidence</string>
     <string name="sleep_efficiency_label">Sleep Efficiency</string>
-    <string name="real_time_metrics">Real-time Metrics</string>
     <string name="sleep_statistics">Sleep Statistics</string>
     <string name="total_sessions_format">%1$d sessions</string>
     <string name="quick_actions">Quick Actions</string>
@@ -75,21 +74,18 @@
     <string name="main_insight">Main Insight</string>
     <string name="key_finding">Key Finding</string>
     <string name="primary_insight_title">Primary Sleep Insight</string>
-    <string name="primary_insight_description">Your most important sleep insight</string>
     <string name="primary_insight_confidence">Primary Confidence</string>
 
     <!-- Pattern Insight Card -->
     <string name="pattern_insight">Pattern Insight</string>
     <string name="sleep_pattern_detected">Sleep Pattern Detected</string>
     <string name="pattern_analysis_result">Pattern Analysis</string>
-    <string name="pattern_insight_title">Pattern Detection</string>
     <string name="pattern_insight_text">Pattern analysis results</string>
 
     <!-- Recommendation Insight Card -->
     <string name="recommendation_insight">Recommendation</string>
     <string name="sleep_recommendation">Sleep Recommendation</string>
     <string name="actionable_recommendation">Actionable Recommendation</string>
-    <string name="recommendation_insight_title">Smart Recommendation</string>
     <string name="recommendation_insight_text">Personalized recommendation</string>
 
     <!-- Weekly Trend Card -->
@@ -102,19 +98,11 @@
 
     <!-- ========== MISSING ANALYTICS LAYOUT STRINGS ========== -->
     <!-- Analytics Layouts -->
-    <string name="analytics_layout">Analytics View</string>
-    <string name="analytics_overview">Analytics Overview</string>
     <string name="analytics_detailed">Detailed Analytics</string>
-    <string name="analytics_trends">Analytics Trends</string>
-    <string name="analytics_comparison">Analytics Comparison</string>
     <string name="analytics_content">Analytics Content</string>
-    <string name="analytics_expanded_layout">Expanded Analytics</string>
 
     <!-- Live Tracking Layouts -->
-    <string name="live_tracking_layout">Live Tracking</string>
-    <string name="live_sensor_data">Live Sensor Data</string>
     <string name="sensor_indicators">Sensor Indicators</string>
-    <string name="real_time_charts">Real-time Charts</string>
 
     <!-- ========== MISSING TREND INDICATORS STRINGS ========== -->
     <!-- Trend Direction Icons -->
@@ -155,33 +143,18 @@
     <!-- ========== MISSING DETAILED ANALYTICS STRINGS ========== -->
     <!-- Quality Report -->
     <string name="quality_report_layout">Quality Report</string>
-    <string name="quality_grade_text">Quality Grade</string>
-    <string name="quality_score_detail_text">Quality Score Details</string>
-    <string name="strongest_factor_text">Strongest Factor</string>
-    <string name="weakest_factor_text">Weakest Factor</string>
 
     <!-- Quality Insights -->
     <string name="quality_insights_layout">Quality Insights</string>
-    <string name="quality_insights_count_text">%1$d quality insights</string>
-    <string name="top_quality_insight_text">Top Quality Insight</string>
-    <string name="top_quality_insight_description_text">Quality insight description</string>
 
     <!-- Comparison -->
     <string name="comparison_layout">Comparison Analysis</string>
-    <string name="performance_rating_text">Performance Rating</string>
-    <string name="comparison_insight_text">Comparison Insights</string>
 
     <!-- Data Integrity -->
     <string name="data_integrity_indicator">Data Integrity</string>
-    <string name="data_integrity_text">Data Quality</string>
-    <string name="data_success_rate_text">Success Rate: %1$.1f%%</string>
 
     <!-- Performance -->
     <string name="performance_layout">Performance Metrics</string>
-    <string name="memory_usage_text">Memory: %1$.1f MB</string>
-    <string name="data_queue_size_text">Queue: %1$d items</string>
-    <string name="avg_save_time_text">Avg Save: %1$dms</string>
-    <string name="performance_indicator">Performance Status</string>
 
     <!-- ========== MISSING LOADING INDICATORS STRINGS ========== -->
     <!-- Loading States -->
@@ -202,35 +175,21 @@
     <!-- Data Save Status -->
     <string name="data_save_indicator">Data Save Status</string>
     <string name="data_save_status_text">Saving data...</string>
-    <string name="data_saved">Data Saved</string>
     <string name="data_save_failed">Save Failed</string>
 
     <!-- Live Metrics -->
     <string name="live_efficiency_text">Live Efficiency</string>
-    <string name="movement_intensity_text">Movement Intensity</string>
     <string name="movement_count_text">Movement Events</string>
     <string name="movement_intensity_value">Movement Value</string>
-    <string name="noise_level_text">Noise Level</string>
     <string name="noise_count_text">Noise Events</string>
     <string name="noise_level_value">Noise Value</string>
-    <string name="environmental_score_text">Environmental Score</string>
     <string name="environmental_grade_text">Environmental Grade</string>
-    <string name="restlessness_level_text">Restlessness Level</string>
-    <string name="live_quality_estimate_text">Live Quality Estimate</string>
 
     <!-- ========== MISSING TRENDS LAYOUT STRINGS ========== -->
     <!-- Trends -->
     <string name="trends_layout">Trends Analysis</string>
     <string name="trends_summary_text">Trends Summary</string>
-    <string name="trend_indicator_text">Trend Indicator</string>
-    <string name="recommendations_count_text">%1$d recommendations</string>
-    <string name="latest_recommendation_text">Latest Recommendation</string>
-    <string name="recommendation_priority_indicator">Priority Level</string>
 
-    <!-- Analytics Session Count -->
-    <string name="analytics_session_count_text">%1$d sessions analyzed</string>
-    <string name="analytics_quality_text">Overall Quality: %1$.1f</string>
-    <string name="analytics_efficiency_text">Avg Efficiency: %1$.1f%%</string>
 
     <!-- ========== MISSING INITIALIZATION STRINGS ========== -->
     <!-- Initialization -->
@@ -271,7 +230,6 @@
     <string name="current_phase">Current Phase</string>
     <string name="phase_confidence">Confidence</string>
     <string name="session_duration">Session Duration</string>
-    <string name="session_progress">Session Progress</string>
     <string name="movement_intensity">Movement</string>
     <string name="noise_level">Noise Level</string>
     <string name="sensor_status">Sensor Status</string>
@@ -323,7 +281,6 @@
     <string name="sensor_status_all_inactive">All Sensors Inactive</string>
     <string name="sensor_events_format">%1$d events</string>
     <string name="confidence_format">%1$d%%</string>
-    <string name="sensors_healthy">All sensors healthy</string>
     <string name="sensor_connectivity_issue">Sensor connectivity issue: %1$s</string>
 
     <!-- Phase Transitions -->
@@ -355,7 +312,6 @@
     <string name="monitoring_sleep_patterns">Monitoring your sleep patterns</string>
     <string name="session_paused">Session paused</string>
     <string name="preparing_to_track">Preparing to track your sleep</string>
-    <string name="sensors_ready">All sensors ready</string>
     <string name="tracking_ready">Ready to begin tracking</string>
 
     <!-- Data Loading States -->
@@ -365,7 +321,6 @@
     <string name="loading_data">Loading data…</string>
     <string name="refreshing_data">Refreshing data…</string>
     <string name="data_loaded">Data loaded successfully</string>
-    <string name="no_sessions_yet">No sleep sessions yet</string>
     <string name="start_first_session">Start your first sleep tracking session</string>
 
     <!-- Permissions -->
@@ -426,11 +381,7 @@
     <string name="loading_chart_data">Loading chart data...</string>
 
     <!-- Session Information -->
-    <string name="session_duration_placeholder">--:--</string>
-    <string name="phase_confidence_placeholder">--%</string>
     <string name="efficiency_placeholder">--%</string>
-    <string name="movement_count_placeholder">-- events</string>
-    <string name="noise_count_placeholder">-- events</string>
 
     <!-- Quality Grades -->
     <string name="quality_excellent">Excellent</string>
@@ -709,21 +660,17 @@
     <!-- ========== MISSING STRINGS - ADD THESE TO YOUR strings.xml ========== -->
 
     <!-- Primary Insight Card Strings -->
-    <string name="primary_insight_title">Sleep Quality Insight</string>
     <string name="primary_insight_description">Your sleep pattern shows improvement</string>
 
     <!-- Pattern Insight Card Strings -->
     <string name="pattern_insight_title">Sleep Pattern Analysis</string>
-    <string name="pattern_insight_text">Consistent bedtime detected</string>
 
     <!-- Recommendation Insight Card Strings -->
     <string name="recommendation_insight_title">Sleep Recommendations</string>
-    <string name="recommendation_insight_text">Try reducing screen time 1 hour before bed</string>
     <string name="latest_recommendation">Latest recommendation based on your data</string>
     <string name="recommendations_count">%1$d recommendations available</string>
 
     <!-- Weekly Trend Card Strings -->
-    <string name="weekly_trend_description">Your sleep trend this week</string>
     <string name="trend_indicator">Trend Status</string>
 
     <!-- Analytics Layout Strings -->

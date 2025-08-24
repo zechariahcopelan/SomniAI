@@ -1302,12 +1302,6 @@ enum class AnalyticsPeriod(val value: String) {
     ALL_TIME("all")
 }
 
-enum class InsightPriority(val value: String) {
-    LOW("low"),
-    NORMAL("normal"),
-    HIGH("high"),
-    URGENT("urgent")
-}
 
 enum class InsightType(val value: String) {
     QUALITY("quality"),

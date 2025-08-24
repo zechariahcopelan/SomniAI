@@ -1687,12 +1687,6 @@ enum class AnalysisDepth {
     BASIC, DETAILED, COMPREHENSIVE
 }
 
-/**
- * Personalization levels
- */
-enum class PersonalizationLevel {
-    NONE, BASIC, ADAPTIVE, ADVANCED
-}
 
 /**
  * Prediction horizons

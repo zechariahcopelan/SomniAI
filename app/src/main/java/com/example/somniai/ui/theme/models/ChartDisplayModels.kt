@@ -1034,9 +1034,6 @@ enum class RecommendationPriority {
     LOW, MEDIUM, HIGH, CRITICAL
 }
 
-enum class InsightPriority {
-    LOW, MEDIUM, HIGH, CRITICAL
-}
 
 // ========== FACTORY METHODS ==========
 

@@ -18,6 +18,8 @@ import java.util.concurrent.atomic.AtomicLong
 import java.util.concurrent.atomic.AtomicBoolean
 import kotlin.math.*
 import kotlin.random.Random
+import com.example.somniai.ai.AIConstants
+
 
 /**
  * Enterprise-grade AI Insights Engine - Advanced sleep intelligence orchestrator
@@ -42,6 +44,19 @@ import kotlin.random.Random
  * - A/B testing framework for insight generation optimization
  * - Advanced user preference learning and adaptation
  */
+
+object AIConstants {
+    const val MAX_CONCURRENT_GENERATIONS = 3
+    const val INSIGHT_CACHE_SIZE = 100
+    const val CACHE_EXPIRY_HOURS = 24L
+    const val MIN_CONFIDENCE_SCORE = 0.7f
+    const val HIGH_CONFIDENCE_THRESHOLD = 0.85f
+    const val MAX_DAILY_INSIGHTS = 5
+    const val MAX_WEEKLY_INSIGHTS = 20
+    const val INSIGHT_COOLDOWN_PERIOD_HOURS = 2L
+    const val TEMPLATE_CACHE_SIZE = 50
+}
+
 class AIInsightsEngine(
     private val context: Context,
     private val repository: SleepRepository,
@@ -1146,15 +1161,7 @@ data class InsightGenerationOptions(
     }
 }
 
-enum class PersonalizationLevel {
-    NONE, BASIC, ADAPTIVE, ADVANCED
-}
 
-// Additional supporting classes and enums...
-enum class InsightPriority { HIGH, MEDIUM, LOW }
-enum class ExpertiseLevel { BEGINNER, GENERAL, INTERMEDIATE, ADVANCED }
-enum class ResponseFormat { INSIGHTS, JSON, STRUCTURED }
-enum class CulturalContext { WESTERN, EASTERN, MEDITERRANEAN, NORDIC }
 
 // Placeholder implementations for complex components
 private class AIModelOrchestrator {

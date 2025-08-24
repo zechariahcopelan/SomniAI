@@ -11,6 +11,7 @@
     <color name="on_surface">#FFFFFF</color>
     <color name="outline">#79747E</color>
     <color name="outline_variant">#49454F</color>
+    <color name="surface_dark">#121212</color>
 
     <!-- Accent Colors -->
     <color name="accent_red">#FF5722</color>

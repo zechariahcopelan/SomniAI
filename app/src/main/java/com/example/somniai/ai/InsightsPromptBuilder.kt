@@ -1500,9 +1500,6 @@ enum class ABTestGroup {
     CONTROL, VARIANT_A, VARIANT_B, PERFORMANCE_OPTIMIZED
 }
 
-enum class ExpertiseLevel {
-    BEGINNER, GENERAL, INTERMEDIATE, ADVANCED, EXPERT
-}
 
 enum class PromptSpecialization {
     SLEEP_MEDICINE, BEHAVIORAL_CHANGE, HABIT_FORMATION,

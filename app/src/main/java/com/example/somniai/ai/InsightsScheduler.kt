@@ -1126,13 +1126,6 @@ sealed class SchedulerHealth {
     data class CRITICAL(val message: String) : SchedulerHealth()
 }
 
-enum class InsightPriority(val value: Int) {
-    EMERGENCY(4),
-    HIGH(3),
-    NORMAL(2),
-    LOW(1),
-    BACKGROUND(0)
-}
 
 enum class PredictionHorizon {
     SHORT_TERM,   // Next 1-3 days
