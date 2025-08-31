@@ -1934,6 +1934,14 @@ enum class InsightType(val displayName: String) {
     RECOMMENDATION_TRIGGER("Recommendation Trigger"),
     GOAL_PROGRESS("Goal Progress"),
     COMPARATIVE_ANALYSIS("Comparative Analysis")
+
+
+    GENERAL("General"),
+    QUALITY("Quality"),
+    EFFICIENCY("Efficiency"),
+    PATTERN("Pattern"),
+    RECOMMENDATION("Recommendation"),
+    EMERGENCY("Emergency")
 }
 
 enum class RecommendationCategory(val displayName: String) {
@@ -1998,6 +2006,34 @@ enum class AnalysisReliability(val displayName: String) {
 }
 
 // ========== MISSING ENUM CLASSES (ADD HERE) ==========
+enum class AIModel(val displayName: String, val provider: String) {
+    GPT3_5_TURBO("GPT-3.5 Turbo", "OpenAI"),
+    GPT4("GPT-4", "OpenAI"),
+    CLAUDE_3_OPUS("Claude 3 Opus", "Anthropic"),
+    CLAUDE_3_SONNET("Claude 3 Sonnet", "Anthropic"),
+    GEMINI_PRO("Gemini Pro", "Google"),
+    GEMINI_PRO_VISION("Gemini Pro Vision", "Google"),
+    LOCAL_MODEL("Local Model", "Local"),
+    CUSTOM("Custom Model", "Custom")
+}
+
+enum class SleepPhase(val displayName: String) {
+    AWAKE("Awake"),
+    LIGHT_SLEEP("Light Sleep"),
+    DEEP_SLEEP("Deep Sleep"),
+    REM_SLEEP("REM Sleep"),
+    UNKNOWN("Unknown")
+}
+
+
+enum class BasicInsightType(val displayName: String) {
+    SLEEP_QUALITY("Sleep Quality"),
+    DURATION("Duration"),
+    EFFICIENCY("Efficiency"),
+    TIMING("Timing"),
+    ENVIRONMENTAL("Environmental"),
+    BEHAVIORAL("Behavioral")
+}
 
 enum class InsightGenerationType(val displayName: String) {
     AUTOMATED("Automated"),
