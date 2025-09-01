@@ -1,26 +1,313 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/sessionCard"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:layout_margin="8dp"
+    app:cardBackgroundColor="@color/surface_dark"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp">
 
-    <!-- Minimal placeholders for SessionHistoryAdapter ViewBinding -->
-    <TextView android:id="@+id/sessionDate" android:layout_width="0dp" android:layout_height="0dp" />
-    <TextView android:id="@+id/sessionDuration" android:layout_width="0dp" android:layout_height="0dp" />
-    <TextView android:id="@+id/qualityScore" android:layout_width="0dp" android:layout_height="0dp" />
-    <TextView android:id="@+id/efficiencyScore" android:layout_width="0dp" android:layout_height="0dp" />
-    <ImageView android:id="@+id/statusIcon" android:layout_width="0dp" android:layout_height="0dp" />
-    <TextView android:id="@+id/movementLevel" android:layout_width="0dp" android:layout_height="0dp" />
-    <TextView android:id="@+id/noiseLevel" android:layout_width="0dp" android:layout_height="0dp" />
-    <View android:id="@+id/sessionCard" android:layout_width="0dp" android:layout_height="0dp" />
-
-    <!-- Actual minimal visible content -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:text="Session Item"
-        android:gravity="center"
-        android:background="@color/surface_dark"
-        android:textColor="@color/text_primary" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
 
-</LinearLayout>
+        <!-- Header Row: Date and Status -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:id="@+id/sessionDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="March 15, 2024"
+                android:textColor="@color/text_primary"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/statusIcon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_check_circle"
+                android:layout_marginStart="8dp" />
+
+        </LinearLayout>
+
+        <!-- Main Metrics Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp">
+
+            <!-- Duration -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Duration"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/sessionDuration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="7h 45m"
+                    android:textColor="@color/text_primary"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="4dp" />
+
+            </LinearLayout>
+
+            <!-- Quality Score -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Quality"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/qualityScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="8.5/10"
+                    android:textColor="@color/accent_green"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="4dp" />
+
+            </LinearLayout>
+
+            <!-- Efficiency Score -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Efficiency"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/efficiencyScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="92%"
+                    android:textColor="@color/accent_green"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="4dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Environmental Metrics Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <!-- Movement Level -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/ic_movement"
+                    android:layout_marginEnd="4dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Movement:"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp"
+                    android:layout_marginEnd="4dp" />
+
+                <TextView
+                    android:id="@+id/movementLevel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Low"
+                    android:textColor="@color/accent_green"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- Noise Level -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/ic_volume_off"
+                    android:layout_marginEnd="4dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Noise:"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp"
+                    android:layout_marginEnd="4dp" />
+
+                <TextView
+                    android:id="@+id/noiseLevel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Quiet"
+                    android:textColor="@color/accent_green"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Progress Indicators -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp"
+            android:gravity="center_vertical">
+
+            <!-- Quality Progress -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginEnd="8dp">
+
+                <ProgressBar
+                    android:id="@+id/qualityProgressBar"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:max="100"
+                    android:progress="85" />
+
+            </LinearLayout>
+
+            <!-- Efficiency Progress -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginStart="8dp">
+
+                <ProgressBar
+                    android:id="@+id/efficiencyProgressBar"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:max="100"
+                    android:progress="92" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Optional: Session Details Toggle -->
+        <LinearLayout
+            android:id="@+id/sessionDetailsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="12dp"
+            android:visibility="gone">
+
+            <!-- Divider -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/text_secondary"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Additional Details -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/sessionStartTime"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Start: 11:30 PM"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/sessionEndTime"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="End: 7:15 AM"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <!-- Session Notes (if any) -->
+            <TextView
+                android:id="@+id/sessionNotes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="AI Insight: Consistent sleep pattern maintained"
+                android:textColor="@color/text_primary"
+                android:textSize="12sp"
+                android:layout_marginTop="8dp"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

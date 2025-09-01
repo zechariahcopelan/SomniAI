@@ -18,7 +18,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:title="SomniAI"
-        app:titleTextColor="@color/text_primary" />
+        app:titleTextColor="@color/text_primary">
+
+        <!-- Profile Button -->
+        <ImageButton
+            android:id="@+id/profileButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_person"
+            android:contentDescription="Profile" />
+
+        <!-- Notifications Button -->
+        <ImageButton
+            android:id="@+id/notificationsButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="56dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_notifications"
+            android:contentDescription="Notifications" />
+
+    </com.google.android.material.appbar.MaterialToolbar>
 
     <!-- Main Content Scroll View -->
     <ScrollView
@@ -37,15 +61,39 @@
             android:padding="16dp">
 
             <!-- ========== STATUS SECTION ========== -->
-            <TextView
-                android:id="@+id/statusText"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:text="Ready to track"
-                android:textAlignment="center"
-                android:textColor="@color/text_primary"
-                android:textSize="18sp" />
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="16dp">
+
+                <ImageView
+                    android:id="@+id/trackingStatusIcon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_sleep"
+                    android:layout_marginEnd="8dp" />
+
+                <TextView
+                    android:id="@+id/statusText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Ready to track"
+                    android:textAlignment="center"
+                    android:textColor="@color/text_primary"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/trackingStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Inactive"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
 
             <!-- Main Tracking Button -->
             <com.google.android.material.button.MaterialButton
@@ -57,6 +105,142 @@
                 android:text="Start Sleep Tracking"
                 android:textSize="18sp"
                 app:cornerRadius="32dp" />
+
+            <!-- ========== CURRENT SESSION CARD ========== -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/currentSessionCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:visibility="gone"
+                app:cardBackgroundColor="@color/card_insight"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Current Session"
+                        android:textColor="@color/text_primary"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="8dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/sessionDuration"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Duration: 0h 0m"
+                            android:textColor="@color/text_primary"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:id="@+id/qualityIndicator"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_quality_good"
+                            android:layout_marginStart="8dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- ========== LIVE METRICS CONTAINER ========== -->
+            <LinearLayout
+                android:id="@+id/liveMetricsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp"
+                android:visibility="gone">
+
+                <!-- Heart Rate Display -->
+                <LinearLayout
+                    android:id="@+id/heartRateDisplay"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@color/surface_dark"
+                    android:padding="12dp"
+                    android:layout_marginEnd="8dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_heart"
+                        android:layout_marginBottom="4dp" />
+
+                    <TextView
+                        android:id="@+id/heartRateText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="--"
+                        android:textColor="@color/text_primary"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="BPM"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <!-- Movement Display -->
+                <LinearLayout
+                    android:id="@+id/movementDisplay"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@color/surface_dark"
+                    android:padding="12dp"
+                    android:layout_marginStart="8dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_movement"
+                        android:layout_marginBottom="4dp" />
+
+                    <TextView
+                        android:id="@+id/movementText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Low"
+                        android:textColor="@color/accent_green"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Activity"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
 
             <!-- ========== ANALYTICS CONTROL SECTION ========== -->
             <LinearLayout
@@ -81,17 +265,73 @@
                     android:layout_height="48dp"
                     app:icon="@drawable/ic_refresh" />
 
+                <!-- AI Insights Toggle -->
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/aiInsightsToggle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="AI Insights"
+                    android:textColor="@color/text_primary"
+                    android:layout_marginStart="8dp" />
+
                 <View
                     android:layout_width="0dp"
                     android:layout_height="1dp"
                     android:layout_weight="1" />
 
-                <!-- Quality Trend Mini Chart (FIXED: Now LineChart) -->
+                <!-- Quality Trend Mini Chart -->
                 <com.github.mikephil.charting.charts.LineChart
                     android:id="@+id/qualityTrendMiniChart"
                     android:layout_width="80dp"
                     android:layout_height="40dp"
                     android:background="@color/surface_dark" />
+
+            </LinearLayout>
+
+            <!-- ========== ANALYTICS CONTAINER ========== -->
+            <LinearLayout
+                android:id="@+id/analyticsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp"
+                android:background="@color/surface_dark"
+                android:padding="16dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Analytics Dashboard"
+                    android:textColor="@color/text_primary"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="16dp" />
+
+                <!-- Charts Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="16dp">
+
+                    <!-- Efficiency Chart -->
+                    <com.github.mikephil.charting.charts.PieChart
+                        android:id="@+id/efficiencyChart"
+                        android:layout_width="0dp"
+                        android:layout_height="120dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="8dp" />
+
+                    <!-- Sleep Architecture Chart -->
+                    <com.github.mikephil.charting.charts.BarChart
+                        android:id="@+id/sleepArchitectureChart"
+                        android:layout_width="0dp"
+                        android:layout_height="120dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="8dp" />
+
+                </LinearLayout>
 
             </LinearLayout>
 
@@ -118,6 +358,17 @@
                     android:layout_height="16dp"
                     android:src="@drawable/ic_lightbulb"
                     android:layout_marginEnd="8dp" />
+
+                <!-- Confidence Indicator -->
+                <TextView
+                    android:id="@+id/confidenceIndicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="95% Confidence"
+                    android:textColor="@color/accent_green"
+                    android:textSize="12sp"
+                    android:layout_marginEnd="8dp"
+                    android:visibility="gone" />
 
                 <View
                     android:layout_width="0dp"
@@ -175,7 +426,7 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/primaryInsightTitle"
+                            android:id="@+id/insightTitle"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/primary_insight_title"
@@ -184,7 +435,7 @@
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/primaryInsightDescription"
+                            android:id="@+id/insightDescription"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/primary_insight_description"
@@ -245,180 +496,256 @@
 
             </androidx.cardview.widget.CardView>
 
-            <!-- Recommendation Insight Card -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/recommendationInsightCard"
+            <!-- ========== RECOMMENDATIONS CONTAINER ========== -->
+            <LinearLayout
+                android:id="@+id/recommendationsContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
-                app:cardBackgroundColor="@color/card_recommendation"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="4dp">
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp">
 
-                <LinearLayout
+                <!-- Recommendation Insight Card -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/recommendationInsightCard"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp">
+                    android:layout_marginBottom="12dp"
+                    app:cardBackgroundColor="@color/card_recommendation"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="4dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:orientation="vertical"
+                        android:padding="16dp">
 
-                        <TextView
-                            android:id="@+id/recommendationInsightTitle"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="@string/recommendation_insight_title"
-                            android:textColor="@color/text_primary"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/insightPriorityBadge"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/priority_high"
-                            android:textColor="@color/accent_red"
-                            android:textSize="10sp"
-                            android:background="@color/surface_dark"
-                            android:padding="4dp"
-                            android:layout_marginStart="8dp" />
-
-                    </LinearLayout>
-
-                    <TextView
-                        android:id="@+id/recommendationInsightText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/recommendation_insight_text"
-                        android:textColor="@color/text_secondary"
-                        android:textSize="14sp"
-                        android:layout_marginTop="8dp" />
-
-                    <!-- NEW: Latest Recommendation Text -->
-                    <TextView
-                        android:id="@+id/latestRecommendationText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/latest_recommendation"
-                        android:textColor="@color/text_primary"
-                        android:textSize="14sp"
-                        android:layout_marginTop="8dp" />
-
-                    <!-- NEW: Recommendations Count -->
-                    <TextView
-                        android:id="@+id/recommendationsCountText"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/recommendations_count"
-                        android:textColor="@color/text_secondary"
-                        android:textSize="12sp"
-                        android:layout_marginTop="4dp" />
-
-                    <!-- NEW: Recommendation Priority Indicator -->
-                    <ImageView
-                        android:id="@+id/recommendationPriorityIndicator"
-                        android:layout_width="16dp"
-                        android:layout_height="16dp"
-                        android:src="@drawable/ic_priority_high"
-                        android:layout_gravity="end"
-                        android:layout_marginTop="8dp" />
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <!-- Weekly Trend Card -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/weeklyTrendCard"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                app:cardBackgroundColor="@color/card_insight"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="4dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="16dp">
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <TextView
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/weekly_trend"
-                            android:textColor="@color/text_primary"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/recommendationInsightTitle"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/recommendation_insight_title"
+                                android:textColor="@color/text_primary"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/insightPriorityBadge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/priority_high"
+                                android:textColor="@color/accent_red"
+                                android:textSize="10sp"
+                                android:background="@color/surface_dark"
+                                android:padding="4dp"
+                                android:layout_marginStart="8dp" />
+
+                        </LinearLayout>
 
                         <TextView
-                            android:id="@+id/weeklyTrendDescription"
+                            android:id="@+id/recommendationInsightText"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/weekly_trend_description"
+                            android:text="@string/recommendation_insight_text"
                             android:textColor="@color/text_secondary"
                             android:textSize="14sp"
-                            android:layout_marginTop="4dp" />
+                            android:layout_marginTop="8dp" />
 
-                        <!-- NEW: Trend Indicator Text -->
+                        <!-- Actionable Recommendations -->
                         <TextView
-                            android:id="@+id/trendIndicatorText"
+                            android:id="@+id/actionableRecommendationsText"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/trend_indicator"
+                            android:text="• Try going to bed 30 minutes earlier\n• Reduce screen time before sleep"
                             android:textColor="@color/text_primary"
                             android:textSize="14sp"
                             android:layout_marginTop="8dp" />
 
-                        <!-- NEW: Trend Icon Text -->
+                        <!-- Latest Recommendation Text -->
                         <TextView
-                            android:id="@+id/trendIconText"
+                            android:id="@+id/latestRecommendationText"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="↗"
-                            android:textColor="@color/accent_green"
-                            android:textSize="16sp"
+                            android:text="@string/latest_recommendation"
+                            android:textColor="@color/text_primary"
+                            android:textSize="14sp"
+                            android:layout_marginTop="8dp" />
+
+                        <!-- Recommendations Count -->
+                        <TextView
+                            android:id="@+id/recommendationsCountText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/recommendations_count"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="12sp"
                             android:layout_marginTop="4dp" />
 
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:gravity="center">
-
-                        <TextView
-                            android:id="@+id/trendPercentage"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="+5.2%"
-                            android:textColor="@color/accent_green"
-                            android:textSize="18sp"
-                            android:textStyle="bold" />
-
+                        <!-- Recommendation Priority Indicator -->
                         <ImageView
-                            android:id="@+id/trendIcon"
+                            android:id="@+id/recommendationPriorityIndicator"
                             android:layout_width="16dp"
                             android:layout_height="16dp"
-                            android:src="@drawable/ic_arrow_up"
-                            android:layout_marginTop="4dp" />
+                            android:src="@drawable/ic_priority_high"
+                            android:layout_gravity="end"
+                            android:layout_marginTop="8dp" />
 
                     </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <!-- ========== TRENDS CONTAINER ========== -->
+            <LinearLayout
+                android:id="@+id/trendsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp">
+
+                <!-- Weekly Trend Card -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/weeklyTrendCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    app:cardBackgroundColor="@color/card_insight"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="4dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="16dp">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/weekly_trend"
+                                android:textColor="@color/text_primary"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/weeklyTrendDescription"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/weekly_trend_description"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="14sp"
+                                android:layout_marginTop="4dp" />
+
+                            <!-- Trend Indicator Text -->
+                            <TextView
+                                android:id="@+id/trendIndicatorText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/trend_indicator"
+                                android:textColor="@color/text_primary"
+                                android:textSize="14sp"
+                                android:layout_marginTop="8dp" />
+
+                            <!-- Trend Icon Text -->
+                            <TextView
+                                android:id="@+id/trendIconText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="â†—"
+                                android:textColor="@color/accent_green"
+                                android:textSize="16sp"
+                                android:layout_marginTop="4dp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                            <TextView
+                                android:id="@+id/trendPercentage"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="+5.2%"
+                                android:textColor="@color/accent_green"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/trendIcon"
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:src="@drawable/ic_arrow_up"
+                                android:layout_marginTop="4dp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <!-- ========== WEEKLY STATS CONTAINER ========== -->
+            <LinearLayout
+                android:id="@+id/weeklyStatsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp"
+                android:background="@color/surface_dark"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Weekly Statistics"
+                    android:textColor="@color/text_primary"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="16dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/weeklyAverageText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Avg: 7h 45m"
+                        android:textColor="@color/text_primary"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/weeklyQualityText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Quality: 8.2/10"
+                        android:textColor="@color/accent_green"
+                        android:textSize="14sp" />
 
                 </LinearLayout>
 
-            </androidx.cardview.widget.CardView>
+            </LinearLayout>
 
             <!-- ========== ANALYTICS OVERVIEW SECTION ========== -->
             <LinearLayout
